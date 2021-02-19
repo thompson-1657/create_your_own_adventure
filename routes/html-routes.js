@@ -25,6 +25,9 @@ module.exports = function(app) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/members.html"));
+    //change path for handlebars
+    //can display character information through this route
+    //query data from database
   });
 
   app.get("/createcharacter", (req, res) => {

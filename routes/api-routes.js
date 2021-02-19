@@ -50,4 +50,7 @@ module.exports = function(app) {
       });
     }
   });
+
+  //Route for creating new character
+  //Route for getting new story text
 };

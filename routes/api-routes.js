@@ -52,5 +52,10 @@ module.exports = function(app) {
   });
 
   //Route for creating new character
+  //Route for getting 
   //Route for getting new story text
+
+  //Route for getting enemies
+
+  //route for 
 };

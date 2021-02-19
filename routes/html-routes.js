@@ -26,4 +26,24 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
+
+  app.get("/character", (req, res) => {
+    //character code
+  })
+
+  app.get("/spawnenemie", (req, res) => {
+    //character code
+  })
+
+  app.get("/levelup", (req, res) => {
+    //insert xp into character 
+  })
+
+  app.get("/attack", (req, res) => {
+    //choices for attack spells and items
+  })
+
+  app.get("/story", (req, res) => {
+    //getting story text
+  })
 };

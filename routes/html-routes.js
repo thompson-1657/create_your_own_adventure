@@ -27,12 +27,17 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
-  app.get("/character", (req, res) => {
-    //character code
+  app.get("/createcharacter", (req, res) => {
+    //create character character code
+    //should only require char name for now
+  })
+
+  app.get("/story", (req, res) => {
+    //getting story text
   })
 
   app.get("/spawnenemie", (req, res) => {
-    //character code
+    //spawn enemie that goes along with story
   })
 
   app.get("/levelup", (req, res) => {
@@ -41,9 +46,5 @@ module.exports = function(app) {
 
   app.get("/attack", (req, res) => {
     //choices for attack spells and items
-  })
-
-  app.get("/story", (req, res) => {
-    //getting story text
   })
 };

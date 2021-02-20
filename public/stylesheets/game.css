@@ -1,0 +1,44 @@
+h2 {
+  color: green;
+  margin-top: 35px;
+}
+
+.bgNav {
+  background-color: green;
+  margin-top: 25px;
+}
+
+h1 {
+  font-size: 19px;
+}
+
+#center-content {
+  margin-top: 45px;
+  font-size: 14px;
+}
+
+html {
+  background-color: green;
+}
+
+h5 {
+  margin-top: 10px;
+  color: green;
+}
+
+button {
+  margin-bottom: 40px;
+  box-shadow: -5px 10px 10px grey;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  height: 200px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}

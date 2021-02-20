@@ -2,3 +2,47 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+
+
+#logo {
+  height: 50px;
+}
+
+.carouselImg {
+  width: 100%;
+  height: 500px;
+}
+
+.background {
+  background-image: url("https://wallpaperaccess.com/full/796832.jpg");
+  color: white;
+}
+
+.userStory {
+  margin-top: 50px;
+  background:rgba(0, 0, 0, 0.5)
+  
+}
+
+.userStoryTitle{
+ color: black;
+}
+
+.navbar {
+  margin: 0 0 0 0;
+  background:rgba(0, 0, 0, 0.5);
+  padding: 0 0 0 0;
+}
+
+.secSignUp {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+footer {
+  background:rgba(0, 0, 0, 0.5);
+  clear: both;
+  position: relative;
+}

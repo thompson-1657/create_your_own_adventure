@@ -17,20 +17,8 @@ module.exports = function(sequelize, DataTypes) {
         },
         exp: {
             type: DataTypes.INTEGER,
-            defaultValue: 0
-        },
-        HTML: {
-            type: DataTypes.INTEGER,
-            defaultValue: 10
-        },
-        CSS: {
-            type: DataTypes.INTEGER,
-            defaultValue: 10
-        },
-        JavaScript: {
-            type: DataTypes.INTEGER,
-            defaultValue: 10
+            allowNull: false
         }
+
     })
-    return Character
 }

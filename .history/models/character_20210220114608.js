@@ -30,7 +30,7 @@ module.exports = function(sequelize, DataTypes) {
         JavaScript: {
             type: DataTypes.INTEGER,
             defaultValue: 10
-        }
+        },
     })
     return Character
 }

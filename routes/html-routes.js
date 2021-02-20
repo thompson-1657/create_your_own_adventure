@@ -28,4 +28,10 @@ module.exports = function(app) {
       user: req.user
     })
   });
+
+app.get("/game", (req, res) => {
+  res.render('game')
+})
+
+
 };

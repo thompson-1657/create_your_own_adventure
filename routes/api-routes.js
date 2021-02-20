@@ -52,15 +52,15 @@ module.exports = function(app) {
   });
 
   //character information
-  app.get("/api/character", (req, res) => {
-    if (!req.user) {
-      res.json({})
-    } else {
-      res.json({
-        character: 
-      })
-    }
-  })
+  // app.get("/api/character", (req, res) => {
+  //   if (!req.user) {
+  //     res.json({})
+  //   } else {
+  //     // res.json({
+  //     //   character: 
+  //     // })
+  //   }
+  // })
 
   //game information
   app.get("/api/game", (req, res) => {

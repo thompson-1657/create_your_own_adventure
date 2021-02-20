@@ -50,4 +50,9 @@ module.exports = function(app) {
       });
     }
   });
+
+  //character information
+  app.get("/api/character", (req, res) => {
+    
+  })
 };

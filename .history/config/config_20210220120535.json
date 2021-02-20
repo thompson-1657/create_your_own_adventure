@@ -1,13 +1,14 @@
 {
   "development": {
     "username": "root",
+    "password": "Rootroot23",
     "database": "adventure_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "0000",
+    "password": null,
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"

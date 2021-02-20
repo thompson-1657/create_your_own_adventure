@@ -1,6 +1,7 @@
 {
   "development": {
     "username": "root",
+    "password": "0000",
     "database": "adventure_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
@@ -8,7 +9,7 @@
   "test": {
     "username": "root",
     "password": "0000",
-    "database": "database_test",
+    "database": "adventure_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

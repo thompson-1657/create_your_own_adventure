@@ -10,18 +10,8 @@ db.sequelize.sync({force: true}).then(() => {
 let stories = [
     {
         title: "Fork in the road",
-        text: "The adventurer comes upon a path on the road.",
+        text: "the adventurer comes upon a path on the road.",
         choice: "Dark Forest, Flower Garden"        
-    },
-    {
-        title: "Dark Forest",
-        text: "You find the body of a past warrior. What do you do?",
-        choice: "Loot Body, Move Forward"        
-    },
-    {
-        title: "Flower Garden",
-        text: "You find a glowing flower in the center of the garden. It's glow gives you a sensation of warmth and comfort. What do you do?",
-        choice: "Take Flower, Continue through Flower Garden"        
     },
 ];
 console.log(db.MainStory)

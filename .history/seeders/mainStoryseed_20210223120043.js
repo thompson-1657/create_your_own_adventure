@@ -43,11 +43,6 @@ let stories = [
         text: "The adventurer comes upon a path on the road.",
         choice: "Dark Forest, Flower Garden"        
     },
-    {
-        title: "Run Away",
-        text: "You barely escape the guardian. You've come to a town mid-festival. A beautiful is gesturing you to dance with her.",
-        choice: "Take The Dance, Go To An Inn"        
-    },
 ];
 console.log(db.MainStory)
 //db

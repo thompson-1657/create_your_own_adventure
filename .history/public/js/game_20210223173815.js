@@ -1,9 +1,8 @@
 $(document).ready(() => {
     $.get("/api/story")
     
-    const storyInput = $("storyInput")
-    const choice1 = $("buttonInput")
-    const choice2 = $("buttonInput")
+    const storyInput = $("")
+    
     
     // function for parsing choices of story
     // function choice(stories) {

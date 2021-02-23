@@ -50,4 +50,15 @@ module.exports = function(app) {
       });
     }
   });
+
+  app.get("/api/story", (req, res) => {
+    db.MainStory.findOne({
+      where: {
+        id: 1
+      }
+    }).then(function(dbMainStory) {
+      // res.json(dbMainStory)
+      console.log(dbMainStory)
+    })
+  })
 };

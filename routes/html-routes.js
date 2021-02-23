@@ -29,8 +29,9 @@ module.exports = function(app) {
     })
   });
 
-app.get("/game", isAuthenticated,(req, res) => {
+app.get("/game", (req, res) => {
   res.render('game')
+  console.log(req.body)
 })
 
 

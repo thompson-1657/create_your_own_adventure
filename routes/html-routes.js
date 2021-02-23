@@ -29,7 +29,7 @@ module.exports = function(app) {
     })
   });
 
-app.get("/game", (req, res) => {
+app.get("/game", isAuthenticated,(req, res) => {
   res.render('game')
 })
 

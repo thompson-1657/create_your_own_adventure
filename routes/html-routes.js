@@ -34,8 +34,8 @@ module.exports = function (app) {
       user: req.user
     })
   });
-
-  app.get("/game", isAuthenticated, (req, res) => {
+  // isAuthenticated,
+  app.get("/game", (req, res) => {
     res.render('game')
   })
 

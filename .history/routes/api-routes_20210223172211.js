@@ -54,57 +54,11 @@ module.exports = function(app) {
   app.get("/api/story", (req, res) => {
     db.MainStory.findOne({
       where: {
-        id: 1
+        id: req.params.id
       }
     }).then(function(dbMainStory) {
       res.json(dbMainStory)
+      console.log(dbMainStory)
     })
   })
-=======
- // api story post routes
-  app.post("/api/story", (req, res) => {
-    db.MainStory.create({
-      title: req.body.title,
-      text: req.body.text,
-      choice: req.body.choice,
-    })
-      .then((data) => {
-        res.status(200).json(data)
-      })
-      .catch(err => {
-        res.status(401).json(err);
-      });
-  });
-
-  app.get("/api/story", (req, res) => {
-    db.MainStory.findAll({}).then(data =>{
-      res.json(data)
-    })
-  });
-
-// api character post  routes
-  app.post("/api/character", (req, res) => {
-    db.Character.create({
-      name: req.body.name,
-      hp: req.body.hp,
-      mp: req.body.mp,
-      exp: req.body.exp,
-      HTML: req.body.HTML,
-      CSS: req.body.CSS,
-      JavaScript: req.body.JavaScript,
-
-    })
-      .then((data) => {
-        res.status(200).json(data)
-      })
-      .catch(err => {
-        res.status(401).json(err);
-      });
-  });
-
-  app.get("/api/character", (req, res) => {
-    db.Character.findAll({}).then(data => {
-      res.json(data)
-    })
-  });
 };

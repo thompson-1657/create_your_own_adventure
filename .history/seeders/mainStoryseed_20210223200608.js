@@ -12,9 +12,9 @@ let stories = [
         title: "Fork in the road",
         narrative: "The adventurer comes upon a fork in the road.",
         leftChoice: "Dark Forest",
-        leftChoiceId: 1,
+        leftChoiceId: 0,
         rightChoice: "Flower Garden",
-        rightChoiceId: 2        
+        rightChoiceId: 1        
     },
     {
         title: "Dark Forest",

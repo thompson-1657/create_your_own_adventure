@@ -4,21 +4,19 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        narrative: {
+        text: {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        leftChoice: {
+        choice: {
             type: DataTypes.TEXT,
-        },
-        leftChoiceId: {
-            type: DataTypes.INTEGER
-        },
-        rightChoice: {
-            type: DataTypes.TEXT,
-        },
-        rightChoiceId: {
-            type: DataTypes.INTEGER
+            get: function() {
+                return JSON.parse(this.getDataValue('choice'));
+            }, 
+            set: function(val) {
+                return this.setDataValue('choice', JSON.stringify(val));
+            }
+            
         }
     })
     return MainStory;

@@ -20,7 +20,8 @@ module.exports = function(app) {
   app.post("/api/signup", (req, res) => {
     db.User.create({
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      characterName: req.body.characterName
     })
       .then(() => {
         res.redirect(307, "/api/login");
@@ -46,65 +47,9 @@ module.exports = function(app) {
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
-        id: req.user.id
+        id: req.user.id,
+        characterName: req.user.characterName
       });
     }
-  });
-
-  app.get("/api/story", (req, res) => {
-    db.MainStory.findOne({
-      where: {
-        id: 1
-      }
-    }).then(function(dbMainStory) {
-      res.json(dbMainStory)
-    })
-  })
-=======
- // api story post routes
-  app.post("/api/story", (req, res) => {
-    db.MainStory.create({
-      title: req.body.title,
-      text: req.body.text,
-      choice: req.body.choice,
-    })
-      .then((data) => {
-        res.status(200).json(data)
-      })
-      .catch(err => {
-        res.status(401).json(err);
-      });
-  });
-
-  app.get("/api/story", (req, res) => {
-    db.MainStory.findAll({}).then(data =>{
-      res.json(data)
-    })
-  });
-
-// api character post  routes
-  app.post("/api/character", (req, res) => {
-    db.Character.create({
-      name: req.body.name,
-      hp: req.body.hp,
-      mp: req.body.mp,
-      exp: req.body.exp,
-      HTML: req.body.HTML,
-      CSS: req.body.CSS,
-      JavaScript: req.body.JavaScript,
-
-    })
-      .then((data) => {
-        res.status(200).json(data)
-      })
-      .catch(err => {
-        res.status(401).json(err);
-      });
-  });
-
-  app.get("/api/character", (req, res) => {
-    db.Character.findAll({}).then(data => {
-      res.json(data)
-    })
   });
 };

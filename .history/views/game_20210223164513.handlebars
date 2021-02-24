@@ -15,11 +15,7 @@
         <a class="nav-link" href=""></a>
       </li>
       <li class="nav-item ml-auto">
-        <a class="nav-link" href="/members">Members</a>
-      </li>
-
-      <li class="nav-item ml-auto">
-        <a class="nav-link" href="/logout">Logout</a>
+        <a class="nav-link" href=""></a>
       </li>
 
     </ul>
@@ -39,7 +35,7 @@
 
       <h5>Stats:</h5>
       <ul></ul>
-      <li>HP:<span></span></li>
+      <li>HP:</li>
       <li>EXP:</li>
       <li>MP:</li>
       <li>Level:</li>
@@ -51,12 +47,14 @@
     </div>
 
     <div class="col-sm">
-      <div id="storyInput">
-      </div>
-      <div id="buttonInput">
-        <button>Button</button>
-        <button>Button</button>
-      </div>
+      <p id="center-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus minus assumenda sunt
+        officiis ex magni iste
+        qui repudiandae sapiente, praesentium officia facere magnam necessitatibus consequatur, rerum et quam a
+        fugiat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, nostrum voluptatem. Cupiditate odit
+        ipsa unde facere, dolor, molestiae commodi consequatur maxime provident sint voluptatibus officia eaque
+        dolorum nemo doloribus? Fugiat?</p>
+      <button>Button</button>
+      <button>Button</button>
     </div>
 
     <div class="col-sm">
@@ -64,26 +62,10 @@
     </div>
   </div>
 </div>
-<script src="js/game.js"></script>
+
 <script>
   $(document).ready(function () {
     $('#styles').attr('href', 'stylesheets/game.css')
-
-
-    // This is the post routes to both tables.
-    // $.post("/api/character", data)
-    // $.post("/api/character", data)
-
-
-    // get information from mainStory table database
-    $.get("/api/story").then(story => {
-      console.log(story)
-    });
-
-    // get information from character table database
-    $.get("/api/character").then(character => {
-      console.log(character)
-    });
   });
-
+  //button should be created and should go away after selected.
 </script>

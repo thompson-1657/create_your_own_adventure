@@ -12,17 +12,17 @@ let stories = [
         title: "Fork in the road",
         narrative: "The adventurer comes upon a fork in the road.",
         leftChoice: "Dark Forest",
-        leftChoiceId: 1,
+        leftChoiceId: 0,
         rightChoice: "Flower Garden",
-        rightChoiceId: 2        
+        rightChoiceId: 1        
     },
     {
         title: "Dark Forest",
         narrative: "You find the body of a past warrior. What do you do?",
         leftChoice: "Loot Body", 
-        leftChoiceId: 3,
+        leftChoiceId: 2,
         rightChoice: "Move Forward",
-        rightChoiceId: 4
+        rightChoiceId: 3
     },
     {
         title: "Flower Garden",

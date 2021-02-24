@@ -4,21 +4,15 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        narrative: {
+        text: {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        leftChoice: {
-            type: DataTypes.TEXT,
-        },
-        leftChoiceId: {
-            type: DataTypes.INTEGER
-        },
-        rightChoice: {
-            type: DataTypes.TEXT,
-        },
-        rightChoiceId: {
-            type: DataTypes.INTEGER
+        choice: {
+            choices: {
+                type: DataTypes.TEXT,
+                id: DataTypes.INTEGER
+            }
         }
     })
     return MainStory;

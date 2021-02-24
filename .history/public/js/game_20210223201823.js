@@ -12,7 +12,7 @@ $(document).ready(() => {
     
         buttonInput.on("click", )
         function choice() {
-            buttonInput.empty()
+            buttonInput.remove()
             console.log(data.leftChoiceId)
             console.log(data.leftChoice)
             console.log(data.rightChoice)

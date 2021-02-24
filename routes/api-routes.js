@@ -51,10 +51,21 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/api/story", (req, res) => {
+  // app.get("/api/story/", (req, res) => {
+  //   db.MainStory.findOne({
+  //     where: {
+  //       id: 1
+  //     }
+  //   }).then(function(dbMainStory) {
+  //     res.json(dbMainStory)
+  //   })
+  // })
+
+  app.get("/api/story/:id", (req, res) => {
+    // console.log(req.params.id)
     db.MainStory.findOne({
       where: {
-        id: 1
+        id: req.params.id
       }
     }).then(function(dbMainStory) {
       res.json(dbMainStory)

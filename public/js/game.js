@@ -1,36 +1,57 @@
 $(document).ready(() => {
-    $.get("/api/story", (data) => {
-        const storyInput = $("#storyInput")
-        const buttonInput = $("#buttonInput")
-        
-        function fillStory() {
-            console.log("this is gamejs " + data.narrative)
-            let storyBit = `<p> ${data.narrative} </p>`
-            storyInput.append(storyBit)
-        }
-        fillStory()
-    
-        buttonInput.on("click", )
-        function choice() {
-            buttonInput.empty()
-            console.log(data.leftChoiceId)
-            console.log(data.leftChoice)
-            console.log(data.rightChoice)
-            console.log(data.rightChoiceId)
-            const buttonGroup = `<button data-value="${data.leftChoiceId}">${data.leftChoice}</button>
-    <button data-value="${data.rightChoiceId}">${data.rightChoice}</button>`
-            buttonInput.append(buttonGroup)
+    const buttonInput = $("#buttonInput")
+    const storyInput = $("#storyInput")
 
-            // var parsedJSON = JSON.parse(data.choice)
-            // console.log(parsedJSON)
-            // for (var i = 0; i < parsedJSON.length; i++) {
-            //     alert(parsedJSON[i].Id)
-            //     buttonInput.append()
-            // }
-        }
-        choice()
-    
+    $("#start").click(function () {
+        $.get('/api/story/1', function (data) {
+          fillStory(1)
+          choice(1)
+        })
+      })
 
+    buttonleft.click(function () {
+        let button1 = $(this).data("value")
+        $.get(`/api/story/${button1}`, fillStory(button1))
+        choice(button1)
     })
+    buttonright.click(function () {
+        let button2 = $(this).data("value")
+        $.get(`/api/story/${button2}`, fillStory(button2))
+        choice(button2)
+    })
+
+    function choice(param) {
+        $.get(`/api/story/${param}`, (data)=>{
+            buttonInput.empty()
+            const buttonGroup = `<button id="leftButton" data-value="${data.leftChoiceId}">
+            ${data.leftChoice}</button>
+            <button id="rightButton" data-value="${data.rightChoiceId}">
+            ${data.rightChoice}</button>`
+
+            buttonInput.append(buttonGroup)
+            let buttonleft = $("#leftButton")
+            let buttonright = $("#rightButton")
+
+            buttonleft.click(function () {
+                let button1 = $(this).data("value")
+                $.get(`/api/story/${button1}`, fillStory(button1))
+                choice(button1)
+            })
+            buttonright.click(function () {
+                let button2 = $(this).data("value")
+                $.get(`/api/story/${button2}`, fillStory(button2))
+                choice(button2)
+            })
+        }
+        )
+    }
+
+
+    function fillStory(buttons) {
+        $.get(`/api/story/${buttons}`, (data) => {
+            storyBit = `<p> ${data.narrative} </p>`
+            storyInput.append(storyBit)
+        })
+    }
     
 })

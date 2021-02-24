@@ -54,8 +54,7 @@
       <div id="storyInput">
       </div>
       <div id="buttonInput">
-        <button>Button</button>
-        <button>Button</button>
+        <button id="start">Start the game</button>
       </div>
     </div>
 
@@ -67,23 +66,14 @@
 <script src="js/game.js"></script>
 <script>
   $(document).ready(function () {
+
     $('#styles').attr('href', 'stylesheets/game.css')
-
-
-    // This is the post routes to both tables.
-    // $.post("/api/character", data)
-    // $.post("/api/character", data)
-
-
-    // get information from mainStory table database
-    $.get("/api/story").then(story => {
-      console.log(story)
-    });
 
     // get information from character table database
     $.get("/api/character").then(character => {
-      console.log(character)
+      // console.log(character)
     });
   });
+
 
 </script>

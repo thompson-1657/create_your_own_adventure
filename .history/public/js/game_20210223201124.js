@@ -16,9 +16,6 @@ $(document).ready(() => {
             console.log(data.leftChoice)
             console.log(data.rightChoice)
             console.log(data.rightChoiceId)
-            const buttonGroup = `<button data-value="${data.leftChoiceId}">${data.leftChoice}</button>
-    <button data-value="${data.rightChoiceId}">${data.rightChoice}</button>`
-            buttonInput.append(buttonGroup)
             // var parsedJSON = JSON.parse(data.choice)
             // console.log(parsedJSON)
             // for (var i = 0; i < parsedJSON.length; i++) {

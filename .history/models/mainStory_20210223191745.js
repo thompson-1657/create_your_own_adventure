@@ -4,21 +4,17 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        narrative: {
+        text: {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        leftChoice: {
+        choice: {
             type: DataTypes.TEXT,
-        },
-        leftChoiceId: {
-            type: DataTypes.INTEGER
-        },
-        rightChoice: {
-            type: DataTypes.TEXT,
-        },
-        rightChoiceId: {
-            type: DataTypes.INTEGER
+            get() {
+                const input = this.getDataValue("hehexd")
+                return input
+            }
+            
         }
     })
     return MainStory;

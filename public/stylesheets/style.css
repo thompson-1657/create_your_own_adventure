@@ -8,6 +8,11 @@ body, html {
   color:white
 }
 
+.startGame {
+  display: flex;
+  justify-content: center;
+}
+
 #home:visited {
   color: white;
   background-color: transparent;

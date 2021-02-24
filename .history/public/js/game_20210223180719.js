@@ -8,10 +8,12 @@ $(document).ready(() => {
         }
     
         function choice() {
-            var parsedJSON = JSON.parse(data.choice)
-            for (var i = 0; i <parsedJSON.length; i++) {
-                alert(parsedJSON[i].Id)
-                buttonInput.append()
+            function choices() {
+                var parsedJSON = JSON.parse(data.choice)
+                for (var i = 0; i <parsedJSON.length; i++) {
+                    alert(parsedJSON[i].Id)
+                    buttonInput.append()
+                }
             }
         }
     

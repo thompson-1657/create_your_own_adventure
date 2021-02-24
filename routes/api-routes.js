@@ -57,8 +57,7 @@ module.exports = function(app) {
         id: 1
       }
     }).then(function(dbMainStory) {
-      // res.json(dbMainStory)
-      console.log(dbMainStory)
+      res.json(dbMainStory)
     })
   })
 };

@@ -5,8 +5,7 @@ $(document).ready(() => {
         
         function fillStory() {
             console.log("this is gamejs" + data.text)
-            let storyBit = `<p> ${data.text} </p>`
-            storyInput.append(storyBit)
+            storyInput.append(data.text)
         }
         fillStory()
     

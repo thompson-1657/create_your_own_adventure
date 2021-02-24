@@ -8,7 +8,8 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        choice: {
+        choices: {
+            //parse array or store as another representation
             choices: {
                 type: DataTypes.STRING,
                 id: DataTypes.INTEGER
@@ -17,4 +18,3 @@ module.exports = function(sequelize, DataTypes) {
     })
     return MainStory;
 };
-//parse array or store as another representation

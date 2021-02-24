@@ -10,9 +10,9 @@ db.sequelize.sync({force: true}).then(() => {
 let stories = [
     {
         title: "Fork in the road",
-        text: "The adventurer comes upon a fork in the road.",
+        text: "The adventurer comes upon a path on the road.",
         choiceOne: "Dark Forest",
-        choiceTwo: "Flower Garden"        
+        choiceTwo:         
     },
     {
         title: "Dark Forest",

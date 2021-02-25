@@ -9,6 +9,10 @@ h1, .navbar, html {
   background-color:  #24a5ec;
 }
 
+.container{
+  margin: 0 auto
+}
+
 #modalButton {
   display: none;
 }
@@ -18,9 +22,9 @@ h2 {
   margin-top: 35px;
 }
 
-.bgNav {
-  background-color: #24a5ec;
-  height: 100px;
+h3 {
+  margin-top: 10px;
+  color: #24a5ec;
 }
 
 .is-warning {
@@ -28,17 +32,16 @@ h2 {
   margin-right: 0;
 }
 
-
-
 #center-content {
   margin-top: 45px;
   font-size: 14px;
 }
 
-h3 {
-  margin-top: 10px;
-  color: #24a5ec;
+.statusContent {
+  padding-left: 30px;
 }
+
+/* .invContent */
 
 #inventory {
   text-align: right;
@@ -74,26 +77,23 @@ img {
 }
 
 
-/* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
   left: 0;
   top: 0;
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
 }
 
-/* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 80%; 
 }
 
-/* The Close Button */
 .close {
   color: #aaa;
   float: right;
@@ -117,4 +117,8 @@ img {
   display:none
 }
 
+#middle {
+  max-width: 100%;
+  flex:none
+}
 }

@@ -4,20 +4,19 @@ $(document).ready(() => {
 
     $("#start").click(function () {
         $.get('/api/story/1', function (data) {
-          fillStory(1)
-          choice(1)
+            fillStory(1)
+            choice(1)
         })
-      })
+    })
 
 
     function choice(param) {
-        $.get(`/api/story/${param}`, (data)=>{
+        $.get(`/api/story/${param}`, (data) => {
             buttonInput.empty()
             let buttonleft;
             let buttonright;
 
-            if(data.leftChoiceId && data.rightChoiceId)
-            {
+            if (data.leftChoiceId && data.rightChoiceId) {
                 const buttonGroup = `<button id="leftButton" data-value="${data.leftChoiceId}">
                 ${data.leftChoice}</button>
                 <button id="rightButton" data-value="${data.rightChoiceId}">
@@ -31,32 +30,26 @@ $(document).ready(() => {
                 buttonInput.append(buttonGroup)
                 buttonleft = $("#leftButton")
             } else if (data.rightChoiceId) {
-                const buttonGroup =  `<button id="rightButton" data-value="${data.rightChoiceId}">
+                const buttonGroup = `<button id="rightButton" data-value="${data.rightChoiceId}">
                 ${data.rightChoice}`
                 buttonInput.append(buttonGroup)
                 buttonright = $("#rightButton")
             }
 
-            // let buttonleft = $("#leftButton")
-            // let buttonright = $("#rightButton")
-if(buttonleft) {
-
-    buttonleft.click(function () {
-        let button1 = $(this).data("value")
-        $.get(`/api/story/${button1}`, fillStory(button1))
-        choice(button1)
-    })
-}
-if(buttonright) {
-
-    buttonright.click(function () {
-        let button2 = $(this).data("value")
-        $.get(`/api/story/${button2}`, fillStory(button2))
-        choice(button2)
-    })
-}
-}
-        )
+            if (buttonleft) {
+                buttonleft.click(function () {
+                    let button1 = $(this).data("value")
+                    $.get(`/api/story/${button1}`, fillStory(button1))
+                    choice(button1)
+                })
+            }
+            if (buttonright) {
+                buttonright.click(function () {
+                    let button2 = $(this).data("value")
+                    $.get(`/api/story/${button2}`, fillStory(button2))
+                    choice(button2)
+                })
+            }})
     }
 
 
@@ -66,5 +59,4 @@ if(buttonright) {
             storyInput.append(storyBit)
         })
     }
-    
 })

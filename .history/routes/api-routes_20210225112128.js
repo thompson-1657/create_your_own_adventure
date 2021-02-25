@@ -1,7 +1,7 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
-// const inventory = require("../models/inventory");
+const inventory = require("../models/inventory");
 const { json } = require("sequelize/types");
 
 module.exports = function(app) {

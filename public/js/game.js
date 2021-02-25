@@ -11,6 +11,7 @@ $(document).ready(() => {
 
     buttonleft.click(function () {
         let button1 = $(this).data("value")
+        console.log(button1);
         $.get(`/api/story/${button1}`, fillStory(button1))
         choice(button1)
     })

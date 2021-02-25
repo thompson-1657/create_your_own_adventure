@@ -25,9 +25,10 @@ $(document).ready(() => {
     })
     
     $.get("api/items", (data) => {
+
         function fillInventory() {
             console.log("this is gamejs " + data)
-            // let inventory = `<p> ${data.name} </p>`
+            let inventory = `<p> ${data.name} </p>`
         }
         fillInventory()
     })

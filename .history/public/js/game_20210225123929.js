@@ -20,15 +20,17 @@ $(document).ready(() => {
             const buttonGroup = `<button data-value="${data.leftChoiceId}">${data.leftChoice}</button>
     <button data-value="${data.rightChoiceId}">${data.rightChoice}</button>`
             buttonInput.append(buttonGroup)
+
+            // var parsedJSON = JSON.parse(data.choice)
+            // console.log(parsedJSON)
+            // for (var i = 0; i < parsedJSON.length; i++) {
+            //     alert(parsedJSON[i].Id)
+            //     buttonInput.append()
+            // }
         }
         choice()
+    
+
     })
     
-    $.get("api/items", (data) => {
-        function fillInventory() {
-            console.log("this is gamejs " + data)
-            // let inventory = `<p> ${data.name} </p>`
-        }
-        fillInventory()
-    })
 })

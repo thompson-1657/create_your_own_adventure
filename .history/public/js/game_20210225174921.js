@@ -22,13 +22,8 @@ $(document).ready(() => {
             buttonInput.append(buttonGroup)
         }
         choice()
+    
+
     })
     
-    $.get("api/items", (data) => {
-        function fillInventory() {
-            console.log("this is gamejs " + data)
-            // let inventory = `<p> ${data.name} </p>`
-        }
-        fillInventory()
-    })
 })

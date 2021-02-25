@@ -111,7 +111,7 @@ module.exports = function(app) {
   });
 
   app.get("/api/items", (req, res) => {
-    db.Inventory.findAll({}).then(data => {
+    db.inventory.findAll({}).then(data => {
       res.json(data)
     })
   })

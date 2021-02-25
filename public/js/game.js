@@ -9,41 +9,53 @@ $(document).ready(() => {
         })
       })
 
+
+    function choice(param) {
+        $.get(`/api/story/${param}`, (data)=>{
+            buttonInput.empty()
+            let buttonleft;
+            let buttonright;
+
+            if(data.leftChoiceId && data.rightChoiceId)
+            {
+                const buttonGroup = `<button id="leftButton" data-value="${data.leftChoiceId}">
+                ${data.leftChoice}</button>
+                <button id="rightButton" data-value="${data.rightChoiceId}">
+                ${data.rightChoice}</button>`
+                buttonInput.append(buttonGroup)
+                buttonleft = $("#leftButton")
+                buttonright = $("#rightButton")
+            } else if (data.leftChoiceId) {
+                const buttonGroup = `<button id="leftButton" data-value="${data.leftChoiceId}">
+                ${data.leftChoice}`
+                buttonInput.append(buttonGroup)
+                buttonleft = $("#leftButton")
+            } else if (data.rightChoiceId) {
+                const buttonGroup =  `<button id="rightButton" data-value="${data.rightChoiceId}">
+                ${data.rightChoice}`
+                buttonInput.append(buttonGroup)
+                buttonright = $("#rightButton")
+            }
+
+            // let buttonleft = $("#leftButton")
+            // let buttonright = $("#rightButton")
+if(buttonleft) {
+
     buttonleft.click(function () {
         let button1 = $(this).data("value")
-        console.log(button1);
         $.get(`/api/story/${button1}`, fillStory(button1))
         choice(button1)
     })
+}
+if(buttonright) {
+
     buttonright.click(function () {
         let button2 = $(this).data("value")
         $.get(`/api/story/${button2}`, fillStory(button2))
         choice(button2)
     })
-
-    function choice(param) {
-        $.get(`/api/story/${param}`, (data)=>{
-            buttonInput.empty()
-            const buttonGroup = `<button id="leftButton" data-value="${data.leftChoiceId}">
-            ${data.leftChoice}</button>
-            <button id="rightButton" data-value="${data.rightChoiceId}">
-            ${data.rightChoice}</button>`
-
-            buttonInput.append(buttonGroup)
-            let buttonleft = $("#leftButton")
-            let buttonright = $("#rightButton")
-
-            buttonleft.click(function () {
-                let button1 = $(this).data("value")
-                $.get(`/api/story/${button1}`, fillStory(button1))
-                choice(button1)
-            })
-            buttonright.click(function () {
-                let button2 = $(this).data("value")
-                $.get(`/api/story/${button2}`, fillStory(button2))
-                choice(button2)
-            })
-        }
+}
+}
         )
     }
 

@@ -1,11 +1,11 @@
 h2 {
-  color: green;
+  color: #24a5ec;
   margin-top: 35px;
 }
 
 .bgNav {
-  background-color: green;
-  margin-top: 25px;
+  background-color: #24a5ec;
+  height: 100px;
 }
 
 h1 {
@@ -17,13 +17,13 @@ h1 {
   font-size: 14px;
 }
 
-html {
-  background-color: green;
+h3 {
+  margin-top: 10px;
+  color: #24a5ec;
 }
 
-h5 {
-  margin-top: 10px;
-  color: green;
+#inventory {
+  text-align: right;
 }
 
 button {
@@ -37,8 +37,20 @@ li {
 
 img {
   display: block;
-  height: 200px;
-  width: 200px;
-  margin-left: auto;
+  height: 250px;
+  width: 300px;
+  margin-left: 0;
   margin-right: auto;
+  border: 8px solid #24a5ec;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.row-height {
+  height: 100vh;
+}
+
+#middle {
+  height: 100%;
+  overflow-y: scroll;
 }

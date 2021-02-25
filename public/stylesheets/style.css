@@ -70,3 +70,9 @@ footer {
   clear: both;
   position: relative;
 }
+
+@media only screen and (max-width: 350px) {
+  body {
+    word-wrap:break-word 
+  }
+}

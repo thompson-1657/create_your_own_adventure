@@ -1,37 +1,53 @@
-<nav class="navbar navbar-expand-lg navbar-dark bgNav">
-  <a class="navbar-brand" href="#">
     <h1>Choose your own coding adventure</h1>
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item ml-auto">
-        <a class="nav-link" href=""></a>
-      </li>
-      <li class="nav-item ml-auto">
-        <a class="nav-link" href=""></a>
-      </li>
-      <li class="nav-item ml-auto">
-        <a class="nav-link" href="/members">Members</a>
-      </li>
+<a class="nav-link" href="/members">
+<button type="button" class="nes-btn is-warning" >Members</button>
 
-      <li class="nav-item ml-auto">
-        <a class="nav-link" href="/logout">Logout</a>
-      </li>
+<a class="nav-link" href="/logout"></a>
+        <button type="button" class="nes-btn is-warning" >Logout</button>
+       </a> 
 
-    </ul>
   </div>
 </nav>
 
 <div class="container">
 
+  <!-- Trigger/Open The Modal -->
+<button id="modalButton">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content nes-container">
+    <span class="close">&times;</span>
+    <h2>Stats:</h5>
+     <ul></ul>
+      <li>HP:<span></span></li>
+      <li>EXP:</li>
+      <li>MP:</li>
+      <li>Level:</li>
+      <li>HTML:</li>
+      <li>CSS:</li>
+      <li>JavaScript:</li>
+      </ul>
+      <h2>Inventory</h2>
+      <ul>
+        <li>items</li>
+      </ul>
+
+
+
+
+  </div>
+
+</div>
+
 
   <div class="row row-height">
 
-    <div class="col-sm">
+    <div class="col-sm statusContent">
       <h2>Character Info</h2>
       <img
         src="https://thumbs.dreamstime.com/b/nerd-robot-hacker-blue-binary-code-human-shaped-bad-intentions-front-computer-39107141.jpg"
@@ -61,8 +77,8 @@
       </div>
     </div>
 
-    <div class="col-sm">
-      <h2 id="inventory">Inventory</h2>
+    <div class="col-sm invContent">
+      <h2>Inventory</h2>
     </div>
   </div>
 </div>
@@ -78,5 +94,31 @@
     });
   });
 
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("modalButton");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
 </script>

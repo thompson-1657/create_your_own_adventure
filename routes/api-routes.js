@@ -62,7 +62,7 @@ module.exports = function(app) {
   // })
 
   app.get("/api/story/:id", (req, res) => {
-    // console.log(req.params.id)
+    console.log(req.params.id)
     db.MainStory.findOne({
       where: {
         id: req.params.id
@@ -74,6 +74,7 @@ module.exports = function(app) {
 
  // api story post routes
   app.post("/api/story", (req, res) => {
+    console.log(req.body.choice);
     db.MainStory.create({
       title: req.body.title,
       text: req.body.text,

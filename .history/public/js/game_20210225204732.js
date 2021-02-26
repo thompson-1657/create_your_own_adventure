@@ -82,7 +82,7 @@ $(document).ready(() => {
             console.log(status[0].exp)
             console.log(status[0].HTML)
             console.log(status[0].CSS)
-            console.log(status[0].JavaScript)
+            console.log(status.JavaScript)
         })
     }
     fillCharacter()

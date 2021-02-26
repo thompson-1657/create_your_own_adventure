@@ -75,14 +75,14 @@ $(document).ready(() => {
 
     function fillCharacter() {
         $.get("api/character", (status) => {
-            console.log(status[0])
+            console.log(status)
             console.log(status[0].name)
             console.log(status[0].hp)
             console.log(status[0].mp)
-            console.log(status[0].exp)
-            console.log(status[0].HTML)
-            console.log(status[0].CSS)
-            console.log(status[0].JavaScript)
+            console.log(status.exp)
+            console.log(status.HTML)
+            console.log(status.CSS)
+            console.log(status.JavaScript)
         })
     }
     fillCharacter()

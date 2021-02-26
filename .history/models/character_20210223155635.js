@@ -32,5 +32,3 @@ module.exports = function(sequelize, DataTypes) {
     })
     return Character;
 };
-
-//every 50 xp is one char level

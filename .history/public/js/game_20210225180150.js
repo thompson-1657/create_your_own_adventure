@@ -4,6 +4,7 @@ $(document).ready(() => {
         const buttonInput = $("#buttonInput")
         
         function fillStory() {
+            console.log("this is gamejs " + data.narrative)
             let storyBit = `<p> ${data.narrative} </p>`
             storyInput.append(storyBit)
         }
@@ -25,7 +26,7 @@ $(document).ready(() => {
     
     $.get("api/items", (item) => {
         function fillInventory() {
-            console.log(item)
+            console.log("this is gamejs " + item)
             // let inventory = `<p> ${data.name} </p>`
         }
         fillInventory()

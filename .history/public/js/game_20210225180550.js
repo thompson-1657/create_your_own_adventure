@@ -4,6 +4,7 @@ $(document).ready(() => {
         const buttonInput = $("#buttonInput")
         
         function fillStory() {
+            console.log("this is gamejs " + data.narrative)
             let storyBit = `<p> ${data.narrative} </p>`
             storyInput.append(storyBit)
         }

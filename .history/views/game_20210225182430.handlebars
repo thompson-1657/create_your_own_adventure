@@ -1,17 +1,17 @@
-<h1>Choose your own coding adventure</h1>
+    <h1>Choose your own coding adventure</h1>
 <nav class="navbar">
 
-  <a class="nav-link" href="/members">
-    <button type="button" class="nes-btn is-warning">Members</button>
+<a class="nav-link" href="/members">
+<button type="button" class="nes-btn is-warning" >Members</button>
 
-    <a class="nav-link" href="/logout">
-      <button type="button" class="nes-btn is-warning">Logout</button>
-    </a>
+<a class="nav-link" href="/logout">
+        <button type="button" class="nes-btn is-warning" >Logout</button>
+       </a> 
 
-    </div>
+  </div>
 </nav>
 
-<!-- Trigger/Open The Modal -->
+  <!-- Trigger/Open The Modal -->
 <button id="modalButton">Open Modal</button>
 
 <!-- The Modal -->
@@ -21,7 +21,7 @@
   <div class="modal-content nes-container">
     <span class="close">&times;</span>
     <h2>Stats:</h5>
-      <ul></ul>
+     <ul></ul>
       <li>HP:<span></span></li>
       <li>EXP:</li>
       <li>MP:</li>
@@ -43,20 +43,13 @@
 </div>
 
 
-<div class="row row-height">
+  <div class="row row-height">
 
-  <div class="col-3 statusContent">
-    <h2>Character Info</h2>
-    <img
-      src="https://thumbs.dreamstime.com/b/nerd-robot-hacker-blue-binary-code-human-shaped-bad-intentions-front-computer-39107141.jpg"
-      alt="coding_cartoon" class="img-fluid characterImg">
-    =======
     <div class="col-3 statusContent">
       <h2>Character Info</h2>
       <img
         src="https://thumbs.dreamstime.com/b/nerd-robot-hacker-blue-binary-code-human-shaped-bad-intentions-front-computer-39107141.jpg"
         alt="coding_cartoon" class="img-fluid">
-      >>>>>>> backend1
 
       <h3>Stats:</h3>
       <ul></ul>
@@ -100,22 +93,22 @@
   });
 
 
-  var modal = document.getElementById("myModal");
-  var btn = document.getElementById("modalButton");
-  var span = document.getElementsByClassName("close")[0];
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("modalButton");
+var span = document.getElementsByClassName("close")[0];
 
-  btn.onclick = function () {
-    modal.style.display = "block";
-  }
+btn.onclick = function() {
+  modal.style.display = "block";
+}
 
-  span.onclick = function () {
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
     modal.style.display = "none";
   }
-
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
+}
 
 </script>

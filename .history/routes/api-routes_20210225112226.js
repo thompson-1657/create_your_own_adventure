@@ -2,14 +2,13 @@
 const db = require("../models");
 const passport = require("../config/passport");
 // const inventory = require("../models/inventory");
-// const { json } = require("sequelize/types");
+const { json } = require("sequelize/types");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
-    
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
       email: req.user.email,
@@ -54,20 +53,38 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/api/story/:id", (req, res) => {
-    console.log(req.params.id)
+  app.get("/api/story", (req, res) => {
     db.MainStory.findOne({
       where: {
-        id: req.params.id
+        id: 1
       }
     }).then(function(dbMainStory) {
       res.json(dbMainStory)
     })
   })
 
- // api story post route
+ // api story post routes
+  app.post("/api/story", (req, res) => {
+    db.MainStory.create({
+      title: req.body.title,
+      text: req.body.text,
+      choice: req.body.choice,
+    })
+      .then((data) => {
+        res.status(200).json(data)
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      });
+  });
 
-// api character post route
+  app.get("/api/story", (req, res) => {
+    db.MainStory.findAll({}).then(data =>{
+      res.json(data)
+    })
+  });
+
+// api character post  routes
   app.post("/api/character", (req, res) => {
     db.Character.create({
       name: req.body.name,
@@ -94,7 +111,7 @@ module.exports = function(app) {
   });
 
   app.get("/api/items", (req, res) => {
-    db.Inventory.findAll({}).then(data => {
+    db.inventory.findAll({}).then(data => {
       res.json(data)
     })
   })

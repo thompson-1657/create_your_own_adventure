@@ -30,7 +30,7 @@ module.exports = function(sequelize, DataTypes) {
         defaultValue: 10
     },
     level: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER
         defaultValue: 1
     }
     })

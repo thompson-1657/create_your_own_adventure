@@ -28,14 +28,7 @@ module.exports = function(sequelize, DataTypes) {
     JavaScript: {
         type: DataTypes.INTEGER,
         defaultValue: 10
-    },
-    level: {
-        type: DataTypes.INTEGER,
-        defaultValue: 1
     }
     })
     return Character;
 };
-//
-//every 50 xp is one char level
-//

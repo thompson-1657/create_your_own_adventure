@@ -3,17 +3,20 @@ const db = require("../models");
 const passport = require("../config/passport");
 // const inventory = require("../models/inventory");
 // const { json } = require("sequelize/types");
+
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
+    
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
       email: req.user.email,
       id: req.user.id
     });
   });
+
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
@@ -26,15 +29,16 @@ module.exports = function(app) {
         res.redirect(307, "/api/login");
       })
       .catch(err => {
-        console.log(err)
-        res.status(401).json("Email already in use.");
+        res.status(401).json(err);
       });
   });
+
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
     res.redirect("/");
   });
+
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", (req, res) => {
     if (!req.user) {
@@ -49,6 +53,7 @@ module.exports = function(app) {
       });
     }
   });
+
   app.get("/api/story/:id", (req, res) => {
     console.log(req.params.id)
     db.MainStory.findOne({
@@ -59,7 +64,9 @@ module.exports = function(app) {
       res.json(dbMainStory)
     })
   })
+
  // api story post route
+
 // api character post route
   app.post("/api/createCharacter", (req, res) => {
     db.Character.create({
@@ -70,6 +77,7 @@ module.exports = function(app) {
       HTML: req.body.HTML,
       CSS: req.body.CSS,
       JavaScript: req.body.JavaScript,
+
     })
       .then((data) => {
         res.status(200).json(data)
@@ -78,11 +86,13 @@ module.exports = function(app) {
         res.status(401).json(err);
       });
   });
+
   app.get("/api/character", (req, res) => {
     db.Character.findAll({}).then(data => {
       res.json(data)
     })
   });
+
   app.get("/api/items", (req, res) => {
     db.Inventory.findAll({}).then(data => {
       res.json(data)

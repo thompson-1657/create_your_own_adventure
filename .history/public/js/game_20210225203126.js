@@ -1,13 +1,6 @@
 $(document).ready(() => {
     const buttonInput = $("#buttonInput")
     const storyInput = $("#storyInput")
-    const hp = $(".hp")
-    const mp = $(".mp")
-    const exp = $(".exp")
-    const level = $(".level")
-    const htmlSkill = $(".html")
-    const cssSkill = $(".css")
-    const javaScriptskill = $(".javascript")
 
     $("#start").click(function () {
         $.get('/api/story/1', function (data) {
@@ -82,22 +75,13 @@ $(document).ready(() => {
 
     function fillCharacter() {
         $.get("api/character", (status) => {
-            console.log(status[0])
-            console.log(status[0].name)
-            console.log(status[0].hp)
-            console.log(status[0].mp)
-            console.log(status[0].exp)
-            console.log(status[0].HTML)
-            console.log(status[0].CSS)
-            console.log(status[0].JavaScript)
-            console.log(status[0].level)
-            hp.append(status[0].hp)
-            exp.append(status[0].exp)
-            mp.append(status[0].mp)
-            htmlSkill.append(status[0].HTML)
-            cssSkill.append(status[0].CSS)
-            javaScriptskill.append(status[0].JavaScript)
-            level.append(status[0].level)
+            console.log(status.name)
+            console.log(status.hp)
+            console.log(status.mp)
+            console.log(status.exp)
+            console.log(status.HTML)
+            console.log(status.CSS)
+            console.log(status.JavaScript)
         })
     }
     fillCharacter()

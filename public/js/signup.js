@@ -12,9 +12,21 @@ $(document).ready(() => {
       password: passwordInput.val().trim()
     };
 
-    if (!userData.email || !userData.password) {
-      return;
-    }
+    if (!userData.email){
+      $('#signUpEmail-error').empty()
+      function validEmail() {
+      $('#signUpEmail-error').append('<p>Must enter a valid email.</p>')
+      }
+      validEmail()
+      }else if (!userData.password) {
+        $('#signUpPassword-error').empty()
+        function validPassword() {
+        $('#signUpPassword-error').append('<p>Must enter a valid password.</p>')
+        }
+        validPassword()
+       }else {
+       return
+     }
     // If we have an email and password, run the signUpUser function
     signUpUser(userData.email, userData.password);
     emailInput.val("");

@@ -76,13 +76,6 @@ $(document).ready(() => {
     function fillCharacter() {
         $.get("api/character", (status) => {
             console.log(status)
-            console.log(status.name)
-            console.log(status.hp)
-            console.log(status.mp)
-            console.log(status.exp)
-            console.log(status.HTML)
-            console.log(status.CSS)
-            console.log(status.JavaScript)
         })
     }
     fillCharacter()

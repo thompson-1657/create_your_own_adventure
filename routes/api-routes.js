@@ -50,6 +50,7 @@ module.exports = function(app) {
       });
     }
   });
+  
  // api story post routes
   app.post("/api/story", (req, res) => {
     db.MainStory.create({

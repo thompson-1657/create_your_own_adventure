@@ -4,14 +4,24 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        text: {
+        narrative: {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        choice: {
-            //parse array or store as another representation
-            type: DataTypes.STRING
+        leftChoice: {
+            type: DataTypes.TEXT,
+        },
+        leftChoiceId: {
+            type: DataTypes.INTEGER
+        },
+        rightChoice: {
+            type: DataTypes.TEXT,
+        },
+        rightChoiceId: {
+            type: DataTypes.INTEGER
         }
     })
     return MainStory;
 };
+// stringify object
+//parse array or store as another representation

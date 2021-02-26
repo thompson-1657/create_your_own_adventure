@@ -50,9 +50,21 @@ module.exports = function(app) {
       });
     }
   });
-  
+
+  app.get("/api/story/:id", (req, res) => {
+    console.log(req.params.id)
+    db.MainStory.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbMainStory) {
+      res.json(dbMainStory)
+    })
+  })
+
  // api story post routes
   app.post("/api/story", (req, res) => {
+    console.log(req.body.choice);
     db.MainStory.create({
       title: req.body.title,
       text: req.body.text,
@@ -98,3 +110,4 @@ module.exports = function(app) {
     })
   });
 };
+

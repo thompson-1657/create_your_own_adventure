@@ -34,10 +34,11 @@ module.exports = function (app) {
       user: req.user
     })
   });
-  // isAuthenticated,
-  app.get("/game", (req, res) => {
-    res.render('game')
-  })
 
+
+app.get("/game", (req, res) => {
+  res.render('game')
+  console.log(req.body)
+})
 
 };

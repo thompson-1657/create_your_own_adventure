@@ -82,7 +82,6 @@ $(document).ready(() => {
 
     function fillCharacter() {
         $.get("api/character", (status) => {
-            console.log(status[0])
             hp.append(status[0].hp)
             exp.append(status[0].exp)
             mp.append(status[0].mp)

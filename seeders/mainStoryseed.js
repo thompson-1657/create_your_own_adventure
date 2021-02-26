@@ -2,11 +2,6 @@ let sequelize = require("sequelize");
 let db = require("../models/");
 
 db.sequelize.sync({force: true}).then(() => {
-// mongoose.connect("mongodb://localhost/workout", {
-//   useNewUrlParser: true,
-//   useFindAndModify: false
-// });
-//rows
 let stories = [
     {
         title: "Homework Dilemma",

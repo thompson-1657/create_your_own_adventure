@@ -59,10 +59,12 @@ $(document).ready(() => {
             storyInput.append(storyBit)
         })
     }
-
-    function fillInventory(list) {
+    function fillInventory(buttons) {
         $.get("api/items", (item) => {
-            console.log(item)
+            function fillInventory() {
+                console.log(item.name)
+                // let inventory = `<p> ${data.name} </p>`
+            }
         })
     }
     fillInventory()

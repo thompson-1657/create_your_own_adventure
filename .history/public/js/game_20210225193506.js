@@ -62,12 +62,11 @@ $(document).ready(() => {
     function fillInventory(list) {
         $.get("api/items", (item) => {
             console.log(item)
-            for (i = 0; i < item.length; i++) {
-                const itemList = `
-                <li> ${item[i].name} </li>
-                `
-                $("#itemList").append(itemList)
-            }
+            const itemGroup = `
+            <li> ${item.name} </li>
+            <li> ${item.description} </li>
+            `
+            $("#itemList").append(itemGroup)
         })
     }
     fillInventory()

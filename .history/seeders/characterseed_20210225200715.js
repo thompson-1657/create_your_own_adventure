@@ -15,7 +15,7 @@ db.sequelize.sync({force: true}).then(() => {
     ];
     console.log(db.Character)
     //db
-    db.Character.bulkCreate(adventurer)
+    db.Inventory.bulkCreate(adventurer)
         .then(data => {
             console.log(data);
             process.exit(0);

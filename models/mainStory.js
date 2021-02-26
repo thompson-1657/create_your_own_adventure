@@ -4,6 +4,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
+<<<<<<< Updated upstream
         narrative: {
             type: DataTypes.TEXT,
             allowNull: false
@@ -25,3 +26,16 @@ module.exports = function(sequelize, DataTypes) {
 };
 // stringify object
 //parse array or store as another representation
+=======
+        text: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        choice: {
+            //parse array or store as another representation
+            type: DataTypes.STRING
+        }
+    })
+    return MainStory;
+};
+>>>>>>> Stashed changes

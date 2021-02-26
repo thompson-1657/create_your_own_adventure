@@ -2,6 +2,7 @@ let sequelize = require("sequelize");
 let db = require("../models/");
 
 db.sequelize.sync({force: true}).then(() => {
+<<<<<<< Updated upstream
 let stories = [
     {
         title: "Homework Dilemma",
@@ -84,6 +85,19 @@ let stories = [
         // rightChoiceId:          
     }
 
+=======
+// mongoose.connect("mongodb://localhost/workout", {
+//   useNewUrlParser: true,
+//   useFindAndModify: false
+// });
+//rows
+let stories = [
+    {
+        title: "Fork in the road",
+        text: "the adventurer comes upon a path on the road.",
+        choice: "Dark Forest, Flower Garden"        
+    },
+>>>>>>> Stashed changes
 ];
 console.log(db.MainStory)
 //db

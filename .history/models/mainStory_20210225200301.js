@@ -4,6 +4,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
+<<<<<<< Updated upstream
         narrative: {
             type: DataTypes.TEXT,
             allowNull: false

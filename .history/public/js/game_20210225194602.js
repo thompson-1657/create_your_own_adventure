@@ -1,13 +1,6 @@
 $(document).ready(() => {
     const buttonInput = $("#buttonInput")
     const storyInput = $("#storyInput")
-    const hp = $(".hp")
-    const mp = $(".mp")
-    const exp = $(".exp")
-    const level = $(".level")
-    const htmlSkill = $(".html")
-    const cssSkill = $(".css")
-    const javaScriptskill = $(".javascript")
 
     $("#start").click(function () {
         $.get('/api/story/1', function (data) {
@@ -66,10 +59,12 @@ $(document).ready(() => {
             storyInput.append(storyBit)
         })
     }
-
-    function fillInventory() {
+    function fillInventory(list) {
         $.get("api/items", (item) => {
             console.log(item)
+            const itemGroup = `
+            <li> ${item.name} </li>
+            `
             for (i = 0; i < item.length; i++) {
                 const itemList = `
                 <li> ${item[i].name} </li>
@@ -79,26 +74,4 @@ $(document).ready(() => {
         })
     }
     fillInventory()
-
-    function fillCharacter() {
-        $.get("api/character", (status) => {
-            console.log(status[0])
-            console.log(status[0].name)
-            console.log(status[0].hp)
-            console.log(status[0].mp)
-            console.log(status[0].exp)
-            console.log(status[0].HTML)
-            console.log(status[0].CSS)
-            console.log(status[0].JavaScript)
-            console.log(status[0].level)
-            hp.append(status[0].hp)
-            exp.append(status[0].exp)
-            mp.append(status[0].mp)
-            htmlSkill.append(status[0].HTML)
-            cssSkill.append(status[0].CSS)
-            javaScriptskill.append(status[0].JavaScript)
-            level.append(status[0].level)
-        })
-    }
-    fillCharacter()
 })

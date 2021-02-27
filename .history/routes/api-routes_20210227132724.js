@@ -94,10 +94,7 @@ module.exports = function (app) {
 
   app.get("/api/character", (req, res) => {
     db.Character.findAll({
-      include: [db.User],
-      where: {
-        id: req.user.id
-      }
+      include: [db.User]
     }).then(data => {
       res.json(data)
     })
@@ -105,14 +102,11 @@ module.exports = function (app) {
 
   app.put("/api/charname", (req, res) => {
     db.Character.update(
-      {
-        name: req.body.name
-      },
-      {
-        where: {
-          name: "MOON"
-      }
-      },
+      {name: req.body.name},
+      {where: {
+        name: "MOON"
+      }},
+      {include: [db.User]}
     )
   })
 

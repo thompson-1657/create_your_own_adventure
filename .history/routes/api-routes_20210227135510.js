@@ -93,10 +93,11 @@ module.exports = function (app) {
   });
 
   app.get("/api/character", (req, res) => {
+    console.log(user)
     db.Character.findAll({
       include: [db.User],
       where: {
-        id: req.user.id
+        id: req.user
       }
     }).then(data => {
       res.json(data)

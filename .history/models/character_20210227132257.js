@@ -34,13 +34,9 @@ module.exports = function(sequelize, DataTypes) {
             defaultValue: 1
         }
     })
-
     Character.associate = function(models) {
-        Character.hasOne(models.User, {
-            onDelete: "cascade"
-        })
+        Character.hasOne(db.User)
     }
-
     return Character;
 };
 

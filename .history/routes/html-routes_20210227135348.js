@@ -36,11 +36,11 @@ module.exports = function (app) {
   });
 
 
-app.get("/game", isAuthenticated, (req, res) => {
+app.get("/game", isAuthenticated,(req, res) => {
   res.render('game')
   console.log(req.body)
 })
-app.get("/forms", isAuthenticated, (req, res) => {
+app.get("/forms", (req, res) => {
   res.render('forms')
   
 })

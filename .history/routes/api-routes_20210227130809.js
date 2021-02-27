@@ -2,6 +2,8 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
+db.User.hasOne(db.Character, {foreignKey: id})
+db.User.findAll({})
 
 module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -93,26 +95,18 @@ module.exports = function (app) {
   });
 
   app.get("/api/character", (req, res) => {
-    db.Character.findAll({
-      include: [db.User],
-      where: {
-        id: req.user.id
-      }
-    }).then(data => {
+
+    db.Character.findAll({}).then(data => {
       res.json(data)
     })
   });
 
   app.put("/api/charname", (req, res) => {
-    db.Character.update(
-      {
-        name: req.body.name
-      },
-      {
-        where: {
-          name: "MOON"
-      }
-      },
+  db.Character.update(
+    {name: req.body.name},
+    {where: {
+      name: "MOON"
+    }}
     )
   })
 

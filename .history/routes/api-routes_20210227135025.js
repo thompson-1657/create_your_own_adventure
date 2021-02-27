@@ -96,7 +96,7 @@ module.exports = function (app) {
     db.Character.findAll({
       include: [db.User],
       where: {
-        id: req.user.id
+        id = 2
       }
     }).then(data => {
       res.json(data)

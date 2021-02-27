@@ -62,16 +62,13 @@
         const charCreator = $("#charCreator")
 
         $('#charCreator').click(() => {
-            console.log(name.val())
-            $.ajax({
-                url: "/api/charname",
-                method: "PUT",
-                data: name.val()
-            })
+
+
+            //last thing
+            window.location.href = "/game";
+
         })
 
 
-        //last thing
-        //window.location.href = "/game";
     })
 </script>

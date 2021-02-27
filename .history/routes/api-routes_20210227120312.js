@@ -101,13 +101,14 @@ module.exports = function (app) {
 
   app.put("/api/charname", (req, res) => {
     console.log(req.body)
-    const name = JSON.stringify(req.body)
       db.Character.update(
-        {name: name},
-        {where: {
-          name: "MOON"
-        }}
+        {name: req.body},
+        {where: req.body}
       )
+      .then(function(rowsUpdated) {
+        res.json(rowsUpdated)
+      })
+      .catch(next)
   })
 
   app.post("/api/items", (req, res) => {

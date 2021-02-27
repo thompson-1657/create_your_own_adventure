@@ -84,31 +84,21 @@ module.exports = function (app) {
   // api story post route
   // api character post route
   app.post("/api/createCharacter", (req, res) => {
-    db.Character.create({}).then((data) => {
+    db.Character.create({
+      name: req.body.name
+    })
+      .then((data) => {
         res.status(200).json(data)
       })
       .catch(err => {
         res.status(401).json(err);
       });
   });
-
   app.get("/api/character", (req, res) => {
-
     db.Character.findAll({}).then(data => {
       res.json(data)
     })
   });
-
-  app.put("/api/charname", (req, res) => {
-    console.log(req.body)
-    const name = JSON.stringify(req.body)
-      db.Character.update(
-        {name: name},
-        {where: {
-          name: "MOON"
-        }}
-      )
-  })
 
   app.post("/api/items", (req, res) => {
     console.log(req.body)

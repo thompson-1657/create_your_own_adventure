@@ -93,22 +93,12 @@ module.exports = function (app) {
   });
 
   app.get("/api/character", (req, res) => {
-
     db.Character.findAll({}).then(data => {
       res.json(data)
     })
   });
 
-  app.put("/api/charname", (req, res) => {
-    console.log(req.body)
-    const name = JSON.stringify(req.body)
-      db.Character.update(
-        {name: name},
-        {where: {
-          name: "MOON"
-        }}
-      )
-  })
+  // app.put("/api/charname", )
 
   app.post("/api/items", (req, res) => {
     console.log(req.body)

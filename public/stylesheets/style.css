@@ -104,3 +104,12 @@ position: relative;
     word-wrap:break-word 
   }
 }
+
+.myForm{
+  background-color: white;
+  padding: 50px;
+
+}
+.myForm input, label {
+color: #000;
+}

@@ -19,7 +19,14 @@ module.exports = function(sequelize, DataTypes) {
         },
         rightChoiceId: {
             type: DataTypes.INTEGER
+        },
+        exp: {
+            type: DataTypes.INTEGER
+        },
+        item: {
+            type: DataTypes.STRING,
         }
+
     })
     return MainStory;
 };

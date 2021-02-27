@@ -1,16 +1,18 @@
-
-  h1 {
-    font-size: 25px;
-    margin-bottom: 0;
-    text-align: center;
-  }
-
-h1, .navbar, html, footer {
-  background-color:  #24a5ec;
+h1 {
+  font-size: 25px;
+  margin-bottom: 0;
+  text-align: center;
 }
 
-.container{
-  margin: 0 auto
+h1,
+.navbar,
+html,
+footer {
+  background-color: #24a5ec;
+}
+
+.container {
+  margin: 0 auto;
 }
 
 #modalButton {
@@ -29,8 +31,12 @@ h3 {
   color: #24a5ec;
 }
 
+p {
+  margin-top: 30px;
+}
+
 .is-warning {
-  margin-left: auto; 
+  margin-left: auto;
   margin-right: 0;
 }
 
@@ -78,22 +84,21 @@ li {
   overflow-y: scroll;
 }
 
-
 .modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4); 
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
   background-color: #fefefe;
   border: 1px solid #888;
-  width: 80%; 
+  width: 80%;
 }
 
 .close {
@@ -104,7 +109,7 @@ li {
 }
 
 #start {
-  margin:0 auto;
+  margin: 0 auto;
   display: block;
 }
 
@@ -119,34 +124,35 @@ li {
 }
 
 #github {
-  display:block;
+  display: block;
   padding-top: 5px;
   padding-bottom: 5px;
   max-width: 40px;
   filter: invert(1);
-  margin: 0 auto ;
+  margin: 0 auto;
 }
 
 @media only screen and (max-width: 770px) {
   #middle {
     padding-left: 20px;
   }
-#modalButton {
-  display:block;
-}
+  #modalButton {
+    display: block;
+  }
 
-.statusContent, .invContent {
-  display:none
-}
+  .statusContent,
+  .invContent {
+    display: none;
+  }
 
-#middle {
-  max-width: 100%;
-  flex:none
-}
+  #middle {
+    max-width: 100%;
+    flex: none;
+  }
 }
 
 @media only screen and (max-width: 318px) {
-  .navbar{
+  .navbar {
     justify-content: center;
   }
 }

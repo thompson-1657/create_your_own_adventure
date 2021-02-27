@@ -22,10 +22,6 @@ db.sequelize.sync().then(() => {
         {
             name: "Josh's Melodica",
             description: "The music give you a feeling of comfort. It fills you with determination."
-        },
-        {
-            name: "Bently's Ball",
-            description: "What's this doing here? Thorw ball to summon Bently."
         }
     ];
     console.log(db.Inventory)

@@ -68,14 +68,14 @@ $(document).ready(() => {
     }
 
     function fillInventory() {
-        $.get("api/items", (item) => {
+        $.get("api/items", function(item) {
             console.log(item)
             for (i = 0; i < item.length; i++) {
                 const itemList = `
                 <li id="itemNoHover"> ${item[i].name} </li>
                 <div id="itemHover"> ${item[i].description} </div>
                 `
-                $(".itemList").append(itemList)
+                $("#itemList").append(itemList)
             }
         })
     }

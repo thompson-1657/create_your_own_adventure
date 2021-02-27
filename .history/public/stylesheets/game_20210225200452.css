@@ -150,12 +150,3 @@ li {
     justify-content: center;
   }
 }
-
-#itemHover {
-  display: none;
-}
-
-#itemNoHover:hover + #itemHover {
-  display: block;
-  color: #24a5ec;
-}

@@ -157,5 +157,5 @@ li {
 
 #itemNoHover:hover + #itemHover {
   display: block;
-  color: #24a5ec;
+  color: 24a5ec;
 }

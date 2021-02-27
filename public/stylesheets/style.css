@@ -51,7 +51,7 @@ body, html {
  color: black;
 }
 
-.navbar, .loginIn, footer, .members, .SignIn {
+.navbar, .loginIn, footer, .members, .SignIn,.myForm {
   background:rgba(0, 0, 0, 0.5);
 }
 
@@ -76,6 +76,10 @@ position: relative;
   text-align: center;
 }
 
+.levelup {
+  color:black
+}
+
 #github {
   display:block;
   padding-top: 5px;
@@ -85,11 +89,13 @@ position: relative;
   margin: 0 auto;
 }
 
-.SignIn, .loginIn, .members  {
+.SignIn, .loginIn, .members, .myForm  {
   padding-top: 50px;
   height:100%;
   margin-bottom: 20px;
+
 }
+
 
 .member-name {
   word-wrap: break-word;
@@ -104,3 +110,4 @@ position: relative;
     word-wrap:break-word 
   }
 }
+

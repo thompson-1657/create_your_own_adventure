@@ -72,17 +72,17 @@ $(document).ready(() => {
             console.log(item)
             for (i = 0; i < item.length; i++) {
                 const itemList = `
-                <li id="itemNoHover"> ${item[i].name} </li>
-                <div id="itemHover"> ${item[i].description} </div>
+                <li> ${item[i].name} </li>
                 `
-                $(".itemList").append(itemList)
+                $("#itemList").append(itemList)
             }
         })
     }
     fillInventory()
+    //on item hover, you should be able to see the description of the item.
 
     function fillCharacter() {
-        $.get("api/character", function(status) {
+        $.get("api/character", (status) => {
             console.log(status[0])
             hp.append(status[0].hp)
             exp.append(status[0].exp)

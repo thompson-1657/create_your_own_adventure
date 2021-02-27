@@ -28,18 +28,18 @@ $(document).ready(() => {
                 ${data.leftChoice}</button>
                 <button id="rightButton" data-value="${data.rightChoiceId}">
                 ${data.rightChoice}</button>`
-                buttonInput.append(buttonGroup)
+                buttonInput.prepend(buttonGroup)
                 buttonleft = $("#leftButton")
                 buttonright = $("#rightButton")
             } else if (data.leftChoiceId) {
                 const buttonGroup = `<button id="leftButton" data-value="${data.leftChoiceId}">
                 ${data.leftChoice}`
-                buttonInput.append(buttonGroup)
+                buttonInput.prepend(buttonGroup)
                 buttonleft = $("#leftButton")
             } else if (data.rightChoiceId) {
                 const buttonGroup = `<button id="rightButton" data-value="${data.rightChoiceId}">
                 ${data.rightChoice}`
-                buttonInput.append(buttonGroup)
+                buttonInput.prepend(buttonGroup)
                 buttonright = $("#rightButton")
             }
 

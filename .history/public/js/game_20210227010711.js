@@ -75,11 +75,12 @@ $(document).ready(() => {
                 <li id="itemNoHover"> ${item[i].name} </li>
                 <div id="itemHover"> ${item[i].description} </div>
                 `
-                $(".itemList").append(itemList)
+                $("#itemList").append(itemList)
             }
         })
     }
     fillInventory()
+    //on item hover, you should be able to see the description of the item.
 
     function fillCharacter() {
         $.get("api/character", function(status) {

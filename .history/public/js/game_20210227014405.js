@@ -63,7 +63,7 @@ $(document).ready(() => {
     function fillStory(buttons) {
         $.get(`/api/story/${buttons}`, (data) => {
             storyBit = `<p> ${data.narrative} </p>`
-            storyInput.append(storyBit)
+            storyInput.prepend(storyBit)
         })
     }
 

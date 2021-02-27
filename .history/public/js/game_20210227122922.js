@@ -93,7 +93,7 @@ $(document).ready(() => {
             cssSkill.append(status[0].CSS)
             javaScriptskill.append(status[0].JavaScript)
             level.append(status[0].level)
-            name.append(status[0].name)
+            name.append(status.name[0])
         })
     }
     fillCharacter()

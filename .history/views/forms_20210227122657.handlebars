@@ -67,9 +67,9 @@
                 url: "/api/charname",
                 method: "PUT",
                 data: { name: name.val() }
+            }).then(function () {
+                window.location.href = "/game";
             })
-
-            window.location.href = "/game";
 
         })
 

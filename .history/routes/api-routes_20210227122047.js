@@ -100,12 +100,15 @@ module.exports = function (app) {
   });
 
   app.put("/api/charname", (req, res) => {
-  db.Character.update(
-    {name: req.body.name},
-    {where: {
-      name: "MOON"
-    }}
-    )
+    console.log(req.body)
+    console.log(req.body.data)
+    const name = JSON.stringify(req.body)
+      db.Character.update(
+        {name: name},
+        {where: {
+          name: "MOON"
+        }}
+      )
   })
 
   app.post("/api/items", (req, res) => {

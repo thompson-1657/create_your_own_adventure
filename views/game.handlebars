@@ -4,15 +4,15 @@
   <a class="nav-link" href="/members">
     <button type="button" class="nes-btn is-warning">Members</button></a>
 
-<button type="button" class="nes-btn is-warning" id="darkmodeButton">Dark-Mode</button>
+  <button type="button" class="nes-btn is-warning" id="darkmodeButton">Dark-Mode</button>
 
 
 
-    <a class="nav-link" href="/logout">
-      <button type="button" class="nes-btn is-warning">Logout</button>
-    </a>
+  <a class="nav-link" href="/logout">
+    <button type="button" class="nes-btn is-warning">Logout</button>
+  </a>
 
-    </div>
+  </div>
 </nav>
 
 <!-- Trigger/Open The Modal -->
@@ -24,7 +24,7 @@
   <!-- Modal content -->
   <div class="modal-content nes-container">
     <span class="close">&times;</span>
-   <h3>Stats:</h3>
+    <h3>Stats:</h3>
     <ul></ul>
     <li>HP:<span class="hp"></span></li>
     <li>EXP:<span class="exp"></span></li>
@@ -34,10 +34,10 @@
     <li>CSS:<span class="css"></span></li>
     <li>JavaScript:<span class="javascript"></span></li>
     </ul>
-  <div class="col-3 invContent">
-    <h2>Inventory</h2>
-    <ul id="itemList"></ul>
-  </div>
+    <div class="col-3 invContent">
+      <h2>Inventory</h2>
+      <ul id="itemList"></ul>
+    </div>
 
 
 
@@ -54,7 +54,6 @@
     <img
       src="https://thumbs.dreamstime.com/b/nerd-robot-hacker-blue-binary-code-human-shaped-bad-intentions-front-computer-39107141.jpg"
       alt="coding_cartoon" class="img-fluid characterImg">
-
     <h3>Stats:</h3>
     <ul></ul>
     <li>HP:<span class="hp"></span></li>
@@ -76,6 +75,11 @@
     </div>
     <div id="buttonInput">
       <button id="start">Start the game</button>
+        <a href="/forms" >Submit Score</a>
+
+
+
+
     </div>
   </div>
 
@@ -117,24 +121,24 @@
     }
   }
 
-$(document.body).toggleClass(localStorage.toggled);
+  $(document.body).toggleClass(localStorage.toggled);
 
 
-function darkLight() {
-   if (localStorage.toggled != 'darkmode') {
+  function darkLight() {
+    if (localStorage.toggled != 'darkmode') {
       $(document.body).toggleClass('darkmode', true);
       localStorage.toggled = "darkmode";
-   } else {
+    } else {
       $(document.body).toggleClass('darkmode', false);
       localStorage.toggled = "";
-   }
-}
+    }
+  }
 
 
-darkmode.click(()=> {
+  darkmode.click(() => {
 
- darkLight()
+    darkLight()
 
- })
+  })
 
 </script>

@@ -1,0 +1,64 @@
+<div class="myForm">
+    <label>Name</label>
+    <input id="name" placeholder="name">
+    <br>
+    <label>HP</label>
+    <input id="hp" placeholder="100" type="number">
+    <br>
+    <label>EXP</label>
+    <input id="exp" placeholder="0" type="number">
+    <br>
+    <label>MP</label>
+    <input id="mp" placeholder="100" type="number">
+    <br>
+    <label>level</label>
+    <input id="level" placeholder="1" type="number">
+    <br>
+    <label>HTML</label>
+    <input id="html" placeholder="20" type="number">
+    <br>
+    <label>CSS</label>
+    <input id="css" placeholder="20" type="number">
+    <br>
+    <label>JavaScript</label>
+    <input id="javaScript" placeholder="20" type="number">
+    <br>
+    <br>
+    <button id="submitForm" class="btn btn-pramery">submit</button>
+      <a href="/game" >Start Game</a>
+
+</div>
+<script>
+    $(document).ready(() => {
+        console.log("ready")
+        $('#submitForm').on('click', () => {
+            var name = $("#name")
+            var hp = $("#hp")
+            var exp = $("#exp")
+            var mp = $("#mp")
+            var html = $("#html")
+            var css = $("#css")
+            var javaScript = $("#javaScript")
+            var data = {
+                name: name.val(),
+                hp: hp.val(),
+                exp: exp.val(),
+                mp: mp.val(),
+                html: html.val(),
+                css: css.val(),
+                javaScript: javaScript.val(),
+            }
+            console.log(data)
+
+            fetch("/api/createCharacter", {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            }).then(res => res.json())
+                .then(res => console.log(res));
+        })
+    })
+</script>

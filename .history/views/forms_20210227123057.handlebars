@@ -1,0 +1,79 @@
+<div class="nes-container">
+    <h1 class="text-center"><a id="home" href="/">Choose Your Coding Adventure <img
+                src="https://icon-library.com/images/programming-code-icon/programming-code-icon-27.jpg" alt="logo"
+                id="logo"> </a></h1>
+</div>
+
+<div class="container  nes-container myForm">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+
+            <div>
+                <h2>Character Creator</h2>
+
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input id="name" type="text" placeholder="name">
+                </div>
+                {{!-- <div>
+                    Users has <span class="skillPLeft">0</span> skillpoints left
+                </div>
+                <div>
+                    <label>HTML: </label><span id="htmlDisplay">0</span>
+                    <button class="nes-btn levelup" id="htmlUp">
+                        <p>&uarr;</p>
+                    </button>
+                    <button class="nes-btn levelup" id="htmlDown">
+                        <p>&darr;</p>
+                    </button>
+                </div>
+                <div>
+                    <label>CSS: </label><span id="cssDisplay">0</span>
+                    <button class="nes-btn levelup" id="cssUp">
+                        <p>&uarr;</p>
+                    </button>
+                    <button class="nes-btn levelup" id="cssDown">
+                        <p>&darr;</p>
+                    </button>
+                </div>
+                <div>
+                    <label>JavaScript: </label><span id="jsDisplay">0</span>
+                    <button class="nes-btn levelup" id="jsUp">
+                        <p>&uarr;</p>
+                    </button>
+                    <button class="nes-btn levelup" id="jsDown">
+                        <p>&darr;</p>
+                    </button>
+                </div> --}}
+                <button class="nes-btn secSignUp" id="charCreator">
+                    Start Game
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    $(document).ready(() => {
+        var name = $("#name")
+        const skillPLeft = $(".skillPLeft")
+        const charCreator = $("#charCreator")
+
+        $('#charCreator').click(() => {
+            console.log(name.val())
+            $.ajax({
+                url: "/api/charname",
+                method: "PUT",
+                data: { name: name.val() }
+            })
+
+            window.location.href = "/game";
+
+        })
+
+
+        //last thing
+    })
+</script>

@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "177471735@$nM",
+    "password": "root",
     "database": "adventure_db",
     "host": "127.0.0.1",
     "dialect": "mysql"

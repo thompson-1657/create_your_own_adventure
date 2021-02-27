@@ -71,11 +71,12 @@ $(document).ready(() => {
         $.get("api/items", (item) => {
             console.log(item)
             for (i = 0; i < item.length; i++) {
+                console.log(item)
                 const itemList = `
                 <li id="itemNoHover"> ${item[i].name} </li>
                 <div id="itemHover"> ${item[i].description} </div>
                 `
-                $(".itemList").append(itemList)
+                $("#itemList").append(itemList)
             }
         })
     }

@@ -103,9 +103,7 @@ li {
   font-weight: bold;
 }
 
-
-
-#start, #darkmodeButton {
+#start {
   margin:0 auto;
   display: block;
 }
@@ -127,10 +125,6 @@ li {
   max-width: 40px;
   filter: invert(1);
   margin: 0 auto ;
-}
-
-.darkmode {
-  filter:invert()
 }
 
 @media only screen and (max-width: 770px) {
@@ -163,5 +157,5 @@ li {
 
 #itemNoHover:hover + #itemHover {
   display: block;
-  color: #24a5ec;
+  color: 24a5ec;
 }

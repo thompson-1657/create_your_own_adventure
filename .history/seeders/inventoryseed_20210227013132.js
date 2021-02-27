@@ -1,7 +1,7 @@
 let sequelize = require("sequelize");
 let db = require("../models/");
 
-db.sequelize.sync({}).then(() => {
+db.sequelize.sync().then(() => {
     let items = [
         {
             name: "Brendan Eich's Keyboard",

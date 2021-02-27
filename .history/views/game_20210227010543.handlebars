@@ -2,17 +2,13 @@
 <nav class="navbar">
 
   <a class="nav-link" href="/members">
-    <button type="button" class="nes-btn is-warning">Members</button></a>
+    <button type="button" class="nes-btn is-warning">Members</button>
 
-  <button type="button" class="nes-btn is-warning" id="darkmodeButton">Dark-Mode</button>
+    <a class="nav-link" href="/logout">
+      <button type="button" class="nes-btn is-warning">Logout</button>
+    </a>
 
-
-
-  <a class="nav-link" href="/logout">
-    <button type="button" class="nes-btn is-warning">Logout</button>
-  </a>
-
-  </div>
+    </div>
 </nav>
 
 <!-- Trigger/Open The Modal -->
@@ -24,21 +20,26 @@
   <!-- Modal content -->
   <div class="modal-content nes-container">
     <span class="close">&times;</span>
-    <h3>Stats:</h3>
-    <ul></ul>
-    <li>HP:<span class="hp"></span></li>
-    <li>EXP:<span class="exp"></span></li>
-    <li>MP: <span class="mp"></span></li>
-    <li>Level:<span class="level"></span></li>
-    <li>HTML:<span class="html"></span></li>
-    <li>CSS:<span class="css"></span></li>
-    <li>JavaScript:<span class="javascript"></span></li>
-    </ul>
-    <div class="col-3 invContent">
+    <h2>Stats:</h5>
+      <ul></ul>
+      <li>HP:<span></span></li>
+      <li>EXP:</li>
+      <li>MP:</li>
+      <li>Level:</li>
+      <li>HTML:</li>
+      <li>CSS:</li>
+      <li>JavaScript:</li>
+      </ul>
       <h2>Inventory</h2>
-      <ul id="itemList"></ul>
-    </div>
+      <ul id="itemList">
+        <li>items</li>
+      </ul>
+
+
+
+
   </div>
+
 </div>
 
 
@@ -49,6 +50,7 @@
     <img
       src="https://thumbs.dreamstime.com/b/nerd-robot-hacker-blue-binary-code-human-shaped-bad-intentions-front-computer-39107141.jpg"
       alt="coding_cartoon" class="img-fluid characterImg">
+
     <h3>Stats:</h3>
     <ul></ul>
     <li>HP:<span class="hp"></span></li>
@@ -70,18 +72,12 @@
     </div>
     <div id="buttonInput">
       <button id="start">Start the game</button>
-
-
-
-
     </div>
   </div>
 
   <div class="col-3 invContent">
     <h2>Inventory</h2>
-    <ul class="itemList">
-
-    </ul>
+    <ul id="itemList"></ul>
   </div>
 </div>
 
@@ -101,7 +97,6 @@
   var modal = document.getElementById("myModal");
   var btn = document.getElementById("modalButton");
   var span = document.getElementsByClassName("close")[0];
-  var darkmode = $("#darkmodeButton")
 
   btn.onclick = function () {
     modal.style.display = "block";
@@ -116,25 +111,5 @@
       modal.style.display = "none";
     }
   }
-
-  $(document.body).toggleClass(localStorage.toggled);
-
-
-  function darkLight() {
-    if (localStorage.toggled != 'darkmode') {
-      $(document.body).toggleClass('darkmode', true);
-      localStorage.toggled = "darkmode";
-    } else {
-      $(document.body).toggleClass('darkmode', false);
-      localStorage.toggled = "";
-    }
-  }
-
-
-  darkmode.click(() => {
-
-    darkLight()
-
-  })
 
 </script>

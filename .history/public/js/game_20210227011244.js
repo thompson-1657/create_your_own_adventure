@@ -75,7 +75,7 @@ $(document).ready(() => {
                 <li id="itemNoHover"> ${item[i].name} </li>
                 <div id="itemHover"> ${item[i].description} </div>
                 `
-                $(".itemList").append(itemList)
+                $("#itemList").append(itemList)
             }
         })
     }

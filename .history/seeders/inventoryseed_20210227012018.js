@@ -1,7 +1,7 @@
 let sequelize = require("sequelize");
 let db = require("../models/");
 
-db.sequelize.sync({}).then(() => {
+db.sequelize.sync().then(() => {
     let items = [
         {
             name: "Brendan Eich's Keyboard",
@@ -21,7 +21,7 @@ db.sequelize.sync({}).then(() => {
         },
         {
             name: "Josh's Melodica",
-            description: "It's sweet melody clears your mind. It fills you with determination."
+            description: "The music give you a feeling of comfort. It fills you with determination."
         },
         {
             name: "Bently's Ball",

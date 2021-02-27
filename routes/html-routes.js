@@ -40,5 +40,9 @@ app.get("/game", (req, res) => {
   res.render('game')
   console.log(req.body)
 })
+app.get("/forms", (req, res) => {
+  res.render('forms')
+  
+})
 
 };

@@ -12,22 +12,24 @@ $(document).ready(() => {
       password: passwordInput.val().trim()
     };
 
+
     if (!userData.email){
       $('#signUpEmail-error').empty()
       function validEmail() {
       $('#signUpEmail-error').append('<p>Must enter a valid email.</p>')
       }
       validEmail()
+      return
       }else if (!userData.password) {
         $('#signUpPassword-error').empty()
         function validPassword() {
         $('#signUpPassword-error').append('<p>Must enter a valid password.</p>')
         }
         validPassword()
-       }else {
-       return
-     }
-
+        return
+      } 
+      
+    
     // If we have an email and password we run the loginUser function and clear the form
     loginUser(userData.email, userData.password);
     emailInput.val("");

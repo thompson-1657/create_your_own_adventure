@@ -3,7 +3,7 @@ const db = require("../models");
 const passport = require("../config/passport");
 // const inventory = require("../models/inventory");
 // const { json } = require("sequelize/types");
-module.exports = function(app) {
+module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -55,12 +55,34 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       }
-    }).then(function(dbMainStory) {
+    }).then(function (dbMainStory) {
       res.json(dbMainStory)
     })
   })
- // api story post route
-// api character post route
+
+  app.get("/api/story",(req,res) => {
+    db.MainStory.findAll({}).then(data =>{
+      res.json(data)
+    })
+    
+  })
+  app.post("/api/story",(req,res)=> {
+    const data = req.body
+    console.log(data)
+    db.MainStory.create({
+      title: req.body.title,
+      narrative: req.body.narrative,
+      leftChoice: req.body.leftChoice,
+      leftChoiceId: req.body.leftChoiceId,
+      rightChoice: req.body.rightChoice,
+      rightChoiceId: req.body.rightChoiceId,
+
+    })
+    res.json(data)
+  })
+
+  // api story post route
+  // api character post route
   app.post("/api/createCharacter", (req, res) => {
     db.Character.create({
       name: req.body.name,
@@ -83,6 +105,16 @@ module.exports = function(app) {
       res.json(data)
     })
   });
+
+  app.post("/api/items", (req, res) => {
+    console.log(req.body)
+    db.Inventory.create({
+      name: req.body.name,
+      description: req.body.description,
+
+    })
+    res.json(res.body)
+  })
   app.get("/api/items", (req, res) => {
     db.Inventory.findAll({}).then(data => {
       res.json(data)

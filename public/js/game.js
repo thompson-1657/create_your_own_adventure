@@ -74,7 +74,7 @@ $(document).ready(() => {
                 const itemList = `
                 <li> ${item[i].name} </li>
                 `
-                $("#itemList").append(itemList)
+                $(".itemList").append(itemList)
             }
         })
     }

@@ -19,6 +19,18 @@ $(document).ready(() => {
     })
   })
 
+  $.ajax({
+    url: "/api/clearexp",
+    method: "PUT",
+    data: {
+      exp: 0
+    }
+  })
+
+  fillCharacter()
+
+
+
   function choice(param) {
     $.get(`/api/story/${param}`, (data) => {
       buttonInput.empty()
@@ -85,18 +97,6 @@ $(document).ready(() => {
     })
   }
 
-  function fillInventory() {
-    $.get('api/character', (data) => {
-      console.log(data[0].item)
-      console.log(data[0])
-
-      // <div id="itemHover"> ${char[i].description} </div>
-      // should be able to keep items aquired in list
-      // delete the data already inside table for items
-    })
-  }
-  fillInventory()
-
   function fillCharacter() {
     $.get("api/character", function (status) {
       exp.empty()
@@ -118,15 +118,6 @@ $(document).ready(() => {
       }
       name.append(status[0].name)
 
-      const itemList = `
-      <li id="itemNoHover"> ${status.item} </li>
-      `
-
-      if (status[0].item === true) {
-        $('.itemList').append(itemList)
-      } else {
-        console.log("Have not aquired")
-      }
       // level.append(status[0].level)
       //  hp.append(status[0].hp)
       //  mp.append(status[0].mp)

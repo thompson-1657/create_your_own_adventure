@@ -50,7 +50,7 @@ module.exports = function (app) {
     }
   });
   app.get("/api/story/:id", (req, res) => {
-    console.log(req.params.id)
+    // console.log(req.params.id)
     db.MainStory.findOne({
       where: {
         id: req.params.id
@@ -68,7 +68,7 @@ module.exports = function (app) {
   })
   app.post("/api/story", (req, res) => {
     const data = req.body
-    console.log(data)
+    // console.log(data)
     db.MainStory.create({
       title: req.body.title,
       narrative: req.body.narrative,
@@ -124,7 +124,7 @@ module.exports = function (app) {
 
 
   app.put("/api/charexp", (req, res) => {
-    console.log(req.body.exp)
+    // console.log(req.body.exp)
     db.Character.increment({
       exp: (req.body.exp)
     }, {
@@ -133,6 +133,18 @@ module.exports = function (app) {
       }
     }, )
   })
+
+
+app.put("/api/clearexp", (req, res) => {
+  // console.log(req.body.exp)
+  db.Character.update({
+    exp: (req.body.exp)
+  }, {
+    where: {
+      id: req.user.id
+    }
+  }, )
+})
 }
 
 // app.put("/api/charlevel", (req, res) => {

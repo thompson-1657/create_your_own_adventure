@@ -107,6 +107,17 @@ module.exports = function (app) {
     db.Character.update(
       {
         name: req.body.name
+        
+      },
+      {
+        where: {
+          id: req.user.id
+      }
+      },
+    )
+    db.Character.update(
+        {
+        exp: 0
       },
       {
         where: {
@@ -115,6 +126,8 @@ module.exports = function (app) {
       },
     )
   })
+
+
 
   app.put("/api/charexp", (req, res) => {
     console.log(req.body.exp)
@@ -129,6 +142,8 @@ module.exports = function (app) {
       },
     )
   })
+
+
 
   app.post("/api/items", (req, res) => {
     console.log(req.body)
@@ -145,3 +160,18 @@ module.exports = function (app) {
     })
   })
 };
+
+
+  // app.put("/api/charlevel", (req, res) => {
+  //   console.log(req.body.exp)
+  //   db.Character.increment(
+  //     {
+  //       level: (req.body.exp)
+  //     },
+  //     {
+  //       where: {
+  //         id: req.user.id
+  //     }
+  //     },
+  //   )
+  // })

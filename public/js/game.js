@@ -1,14 +1,14 @@
 $(document).ready(() => {
     const buttonInput = $("#buttonInput")
     const storyInput = $("#storyInput")
-    const hp = $(".hp")
-    const mp = $(".mp")
     const exp = $(".exp")
     const level = $(".level")
-    const htmlSkill = $(".html")
-    const cssSkill = $(".css")
-    const javaScriptskill = $(".javascript")
     const name = $(".name")
+    // const hp = $(".hp")
+    // const mp = $(".mp")
+    // const htmlSkill = $(".html")
+    // const cssSkill = $(".css")
+    // const javaScriptskill = $(".javascript")
 
     $("#start").click(function () {
         $.get('/api/story/1', function (data) {
@@ -16,7 +16,6 @@ $(document).ready(() => {
             choice(1)
         })
     })
-
 
     function choice(param) {
         $.get(`/api/story/${param}`, (data) => {
@@ -60,7 +59,6 @@ $(document).ready(() => {
             }})
     }
 
-
     function fillStory(buttons) {
         $.get(`/api/story/${buttons}`, (data) => {
             storyBit = `<p> ${data.narrative} </p>`
@@ -72,9 +70,8 @@ $(document).ready(() => {
                         data: { exp: data.exp }
                     })
                     fillCharacter()
-        
-
-        }})}
+        }
+    })}
 
     function fillInventory() {
         $.get("api/items", (item) => {
@@ -95,15 +92,28 @@ $(document).ready(() => {
             exp.empty()
             level.empty()
             name.empty()
-
-  //          hp.append(status[0].hp)
             exp.append(status[0].exp)
-//            mp.append(status[0].mp)
- //           htmlSkill.append(status[0].HTML)
-  //          cssSkill.append(status[0].CSS)
-   //         javaScriptskill.append(status[0].JavaScript)
-            level.append(status[0].level)
+            if (status[0].exp >= 300) {
+                level.append(7)
+            } else if (status[0].exp >= 250) {
+                level.append(6)
+            } else if (status[0].exp >= 200) {
+                level.append(5)
+            } else if (status[0].exp >= 150) {
+                level.append(4)
+            } else if (status[0].exp >= 100) {
+                level.append(3)
+            }  else if (status[0].exp >= 50) {
+                level.append(2)
+            }
             name.append(status[0].name)
+
+            // level.append(status[0].level)
+            //  hp.append(status[0].hp)
+            //  mp.append(status[0].mp)
+            //  htmlSkill.append(status[0].HTML)
+            //  cssSkill.append(status[0].CSS)
+            //  javaScriptskill.append(status[0].JavaScript)
         })
     }
     fillCharacter()

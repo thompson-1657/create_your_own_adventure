@@ -74,18 +74,12 @@ $(document).ready(() => {
         })
         fillCharInv()
         $.ajax({
-          url: "/api/charitem",
+          url: "/api/inventory",
           method: "GET",
           data: {
             name: data.name,
             description: data.description
           }
-        }).then(function (data) {
-          const itemList = `
-          <li id="itemNoHover"> ${data[i].name} </li>
-          <div id="itemHover"> ${data[i].description} </div>
-          `
-          $('.itemList').append(itemList)
         })
         fillCharInv()
       }

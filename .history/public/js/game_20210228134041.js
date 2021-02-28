@@ -72,22 +72,7 @@ $(document).ready(() => {
             exp: data.exp
           }
         })
-        fillCharInv()
-        $.ajax({
-          url: "/api/charitem",
-          method: "GET",
-          data: {
-            name: data.name,
-            description: data.description
-          }
-        }).then(function (data) {
-          const itemList = `
-          <li id="itemNoHover"> ${data[i].name} </li>
-          <div id="itemHover"> ${data[i].description} </div>
-          `
-          $('.itemList').append(itemList)
-        })
-        fillCharInv()
+        fillCharacter()
       }
     })
   }

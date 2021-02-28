@@ -136,7 +136,7 @@ module.exports = function (app) {
 
   app.put("/api/charitem", (req, res) => {
     console.log(req.body.exp)
-    db.Character.update({
+    db.Character.increment({
       item: (req.body.item)
     }, {
       where: {

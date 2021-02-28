@@ -74,7 +74,7 @@ $(document).ready(() => {
         })
         fillCharInv()
         $.ajax({
-          url: "/api/charitem",
+          url: "/api/inventory",
           method: "GET",
           data: {
             name: data.name,

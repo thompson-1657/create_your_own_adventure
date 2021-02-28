@@ -35,6 +35,14 @@ p {
   margin-top: 30px;
 }
 
+li {
+  margin-top: 20px;
+}
+
+.name {
+  font-size: 25px;
+}
+
 .is-warning {
   margin-left: auto;
   margin-right: 0;
@@ -108,11 +116,9 @@ li {
   font-weight: bold;
 }
 
-
-
-
-#start, #darkmodeButton {
-  margin:0 auto;
+#start,
+#darkmodeButton {
+  margin: 0 auto;
 
   display: block;
 }
@@ -137,7 +143,7 @@ li {
 }
 
 .darkmode {
-  filter:invert()
+  filter: invert();
 }
 
 @media only screen and (max-width: 770px) {
@@ -164,7 +170,6 @@ li {
     justify-content: center;
   }
 }
-
 
 #itemHover {
   display: none;

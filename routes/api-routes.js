@@ -110,7 +110,21 @@ module.exports = function (app) {
       },
       {
         where: {
-          name: "MOON"
+          id: req.user.id
+      }
+      },
+    )
+  })
+
+  app.put("/api/charexp", (req, res) => {
+    console.log(req.body.exp)
+    db.Character.increment(
+      {
+        exp: (req.body.exp)
+      },
+      {
+        where: {
+          id: req.user.id
       }
       },
     )

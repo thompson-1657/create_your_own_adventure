@@ -65,8 +65,16 @@ $(document).ready(() => {
         $.get(`/api/story/${buttons}`, (data) => {
             storyBit = `<p> ${data.narrative} </p>`
             storyInput.append(storyBit)
-        })
-    }
+            if(data.exp) {
+                    $.ajax({
+                        url: "/api/charexp",
+                        method: "PUT",
+                        data: { exp: data.exp }
+                    })
+                    fillCharacter()
+        
+
+        }})}
 
     function fillInventory() {
         $.get("api/items", (item) => {
@@ -84,14 +92,16 @@ $(document).ready(() => {
 
     function fillCharacter() {
         $.get("api/character", function(status) {
-            console.log(status[0])
+            exp.empty()
+            level.empty()
+            name.empty()
 
-            hp.append(status[0].hp)
+  //          hp.append(status[0].hp)
             exp.append(status[0].exp)
-            mp.append(status[0].mp)
-            htmlSkill.append(status[0].HTML)
-            cssSkill.append(status[0].CSS)
-            javaScriptskill.append(status[0].JavaScript)
+//            mp.append(status[0].mp)
+ //           htmlSkill.append(status[0].HTML)
+  //          cssSkill.append(status[0].CSS)
+   //         javaScriptskill.append(status[0].JavaScript)
             level.append(status[0].level)
             name.append(status[0].name)
         })

@@ -4,6 +4,7 @@ const session = require("express-session");
 const exphbs  = require('express-handlebars');
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
+let sequelize = require("sequelize");
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
@@ -26,6 +27,8 @@ app.use(passport.session());
 // Requiring our routes
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
+
+require("./seeders/mainStoryseed.js")(app);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(() => {

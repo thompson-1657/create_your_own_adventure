@@ -125,7 +125,6 @@ module.exports = function (app) {
     })
     res.json(res.body)
   })
-  
   app.get("/api/items", (req, res) => {
     db.Inventory.findAll({}).then(data => {
       res.json(data)

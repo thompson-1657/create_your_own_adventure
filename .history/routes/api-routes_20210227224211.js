@@ -116,16 +116,15 @@ module.exports = function (app) {
     )
   })
 
-  app.post("/api/items", (req, res) => {
-    console.log(req.body)
-    db.Inventory.create({
-      name: req.body.name,
-      description: req.body.description,
+  // app.post("/api/items", (req, res) => {
+  //   console.log(req.body)
+  //   db.Inventory.create({
+  //     name: req.body.name,
+  //     description: req.body.description,
 
-    })
-    res.json(res.body)
-  })
-  
+  //   })
+  //   res.json(res.body)
+  // })
   app.get("/api/items", (req, res) => {
     db.Inventory.findAll({}).then(data => {
       res.json(data)

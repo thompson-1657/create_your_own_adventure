@@ -96,7 +96,3 @@ db.MainStory.bulkCreate(stories)
         process.exit(1);
     });
 })
-
-//add items to seed
-//mainstory items
-//throw items into inventory on character

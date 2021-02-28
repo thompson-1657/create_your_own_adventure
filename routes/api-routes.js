@@ -147,16 +147,3 @@ app.put("/api/clearexp", (req, res) => {
 })
 }
 
-// app.put("/api/charlevel", (req, res) => {
-//   console.log(req.body.exp)
-//   db.Character.increment(
-//     {
-//       level: (req.body.exp)
-//     },
-//     {
-//       where: {
-//         id: req.user.id
-//     }
-//     },
-//   )
-// })

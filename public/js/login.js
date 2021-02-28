@@ -14,6 +14,7 @@ $(document).ready(() => {
 
 
     if (!userData.email){
+      console.log("wrong email")
       $('#signUpEmail-error').empty()
       function validEmail() {
       $('#signUpEmail-error').append('<p>Must enter a valid email.</p>')
@@ -21,6 +22,7 @@ $(document).ready(() => {
       validEmail()
       return
       }else if (!userData.password) {
+        console.log("wrong password")
         $('#signUpPassword-error').empty()
         function validPassword() {
         $('#signUpPassword-error').append('<p>Must enter a valid password.</p>')
@@ -48,6 +50,13 @@ $(document).ready(() => {
       })
       .catch(err => {
         console.log(err);
+        if(err){
+          $('#signUpPassword-error').empty()
+          function validPassword() {
+          $('#signUpPassword-error').append('<p>Must enter a valid email or password.</p>')
+          }
+          validPassword()
+        }
       });
   }
 });

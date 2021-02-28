@@ -60,13 +60,13 @@ module.exports = function (app) {
     })
   })
 
-  app.get("/api/story", (req, res) => {
-    db.MainStory.findAll({}).then(data => {
+  app.get("/api/story",(req,res) => {
+    db.MainStory.findAll({}).then(data =>{
       res.json(data)
     })
-
+    
   })
-  app.post("/api/story", (req, res) => {
+  app.post("/api/story",(req,res)=> {
     const data = req.body
     console.log(data)
     db.MainStory.create({
@@ -85,8 +85,8 @@ module.exports = function (app) {
   // api character post route
   app.post("/api/createCharacter", (req, res) => {
     db.Character.create({}).then((data) => {
-      res.status(200).json(data)
-    })
+        res.status(200).json(data)
+      })
       .catch(err => {
         res.status(401).json(err);
       });
@@ -107,43 +107,14 @@ module.exports = function (app) {
     db.Character.update(
       {
         name: req.body.name
-
       },
       {
         where: {
-          id: req.user.id
-        }
-      },
-    )
-    db.Character.update(
-      {
-        exp: 0
-      },
-      {
-        where: {
-          id: req.user.id
-        }
+          name: "MOON"
+      }
       },
     )
   })
-
-
-
-  app.put("/api/charexp", (req, res) => {
-    console.log(req.body.exp)
-    db.Character.increment(
-      {
-        exp: (req.body.exp)
-      },
-      {
-        where: {
-          id: req.user.id
-        }
-      },
-    )
-  })
-
-
 
   app.post("/api/items", (req, res) => {
     console.log(req.body)
@@ -161,18 +132,3 @@ module.exports = function (app) {
     })
   })
 };
-
-
-  // app.put("/api/charlevel", (req, res) => {
-  //   console.log(req.body.exp)
-  //   db.Character.increment(
-  //     {
-  //       level: (req.body.exp)
-  //     },
-  //     {
-  //       where: {
-  //         id: req.user.id
-  //     }
-  //     },
-  //   )
-  // })

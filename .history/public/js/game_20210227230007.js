@@ -1,21 +1,22 @@
 $(document).ready(() => {
     const buttonInput = $("#buttonInput")
     const storyInput = $("#storyInput")
+    const hp = $(".hp")
+    const mp = $(".mp")
     const exp = $(".exp")
     const level = $(".level")
+    const htmlSkill = $(".html")
+    const cssSkill = $(".css")
+    const javaScriptskill = $(".javascript")
     const name = $(".name")
-    // const hp = $(".hp")
-    // const mp = $(".mp")
-    // const htmlSkill = $(".html")
-    // const cssSkill = $(".css")
-    // const javaScriptskill = $(".javascript")
 
-  $('#start').click(function() {
-    $.get('/api/story/1', function(data) {
-      fillStory(1)
-      choice(1)
+    $("#start").click(function () {
+        $.get('/api/story/1', function (data) {
+            fillStory(1)
+            choice(1)
+        })
     })
-  })
+
 
     function choice(param) {
         $.get(`/api/story/${param}`, (data) => {
@@ -28,16 +29,16 @@ $(document).ready(() => {
                 ${data.leftChoice}</button>
                 <button id="rightButton" data-value="${data.rightChoiceId}">
                 ${data.rightChoice}</button>`
-        buttonInput.append(buttonGroup)
-        buttonleft = $('#leftButton')
-        buttonright = $('#rightButton')
-      } else if (data.leftChoiceId) {
-        const buttonGroup = `<button id="leftButton" data-value="${data.leftChoiceId}">
+                buttonInput.append(buttonGroup)
+                buttonleft = $("#leftButton")
+                buttonright = $("#rightButton")
+            } else if (data.leftChoiceId) {
+                const buttonGroup = `<button id="leftButton" data-value="${data.leftChoiceId}">
                 ${data.leftChoice}`
-        buttonInput.append(buttonGroup)
-        buttonleft = $('#leftButton')
-      } else if (data.rightChoiceId) {
-        const buttonGroup = `<button id="rightButton" data-value="${data.rightChoiceId}">
+                buttonInput.append(buttonGroup)
+                buttonleft = $("#leftButton")
+            } else if (data.rightChoiceId) {
+                const buttonGroup = `<button id="rightButton" data-value="${data.rightChoiceId}">
                 ${data.rightChoice}`
                 buttonInput.append(buttonGroup)
                 buttonright = $("#rightButton")
@@ -59,6 +60,7 @@ $(document).ready(() => {
             }})
     }
 
+
     function fillStory(buttons) {
         $.get(`/api/story/${buttons}`, (data) => {
             storyBit = `<p> ${data.narrative} </p>`
@@ -70,50 +72,38 @@ $(document).ready(() => {
                         data: { exp: data.exp }
                     })
                     fillCharacter()
-        }
-    })}
+        
 
-  function fillInventory() {
-    $.get('api/items', (item) => {
-      console.log(item)
-      for (i = 0; i < item.length; i++) {
-        const itemList = `
+        }})}
+
+    function fillInventory() {
+        $.get("api/items", (item) => {
+            console.log(item)
+            for (i = 0; i < item.length; i++) {
+                const itemList = `
                 <li id="itemNoHover"> ${item[i].name} </li>
                 <div id="itemHover"> ${item[i].description} </div>
                 `
-        $('.itemList').append(itemList)
-      }
-    })
-  }
-  fillInventory()
+                $(".itemList").append(itemList)
+            }
+        })
+    }
+    fillInventory()
 
     function fillCharacter() {
         $.get("api/character", function(status) {
             exp.empty()
             level.empty()
             name.empty()
-            exp.append(status[0].exp)
-            if (status[0].exp >= 300) {
-                level.append(7)
-            } else if (status[0].exp >= 250) {
-                level.append(6)
-            } else if (status[0].exp >= 200) {
-                level.append(5)
-            } else if (status[0].exp >= 150) {
-                level.append(4)
-            } else if (status[0].exp >= 100) {
-                level.append(3)
-            }  else if (status[0].exp >= 50) {
-                level.append(2)
-            }
-            name.append(status[0].name)
 
-            // level.append(status[0].level)
-            //  hp.append(status[0].hp)
-            //  mp.append(status[0].mp)
-            //  htmlSkill.append(status[0].HTML)
-            //  cssSkill.append(status[0].CSS)
-            //  javaScriptskill.append(status[0].JavaScript)
+  //          hp.append(status[0].hp)
+            exp.append(status[0].exp)
+//            mp.append(status[0].mp)
+ //           htmlSkill.append(status[0].HTML)
+  //          cssSkill.append(status[0].CSS)
+   //         javaScriptskill.append(status[0].JavaScript)
+            level.append(status[0].level)
+            name.append(status[0].name)
         })
     }
     fillCharacter()

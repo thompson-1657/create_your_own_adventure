@@ -17,7 +17,7 @@ db.sequelize.sync({}).then(() => {
         },
         {
             name: "Håkon Wium's Keyboard",
-            description: "From the creator of CSS Himself, This powerful keyboard grants CSS profciency."        
+            description: "From the creator of CSS Himself, This powerful keyboard grants +10 CSS"        
         },
         {
             name: "Josh's Melodica",

@@ -77,11 +77,14 @@ $(document).ready(() => {
         fillCharacter()
       }
       if (data.item) {
-        const itemList = `
-                <li id="itemNoHover"> ${data.item} </li>
-                `
-        invContent.append(itemList)
-
+        $.ajax({
+          url: "/api/charitem",
+          method: "PUT",
+          data: {
+            item: data.item
+          }
+        })
+        fillInventory()
       }
     })
   }
@@ -90,7 +93,10 @@ $(document).ready(() => {
     $.get('api/character', (data) => {
       console.log(data[0].item)
       console.log(data[0])
-
+      const itemList = `
+                <li id="itemNoHover"> ${data[0].item} </li>
+                `
+      invContent.append(itemList)
       // <div id="itemHover"> ${char[i].description} </div>
       // should be able to keep items aquired in list
       // delete the data already inside table for items

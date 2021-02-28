@@ -34,7 +34,7 @@ module.exports = function (sequelize, DataTypes) {
             defaultValue: 1
         },
         item: {
-            type: DataTypes.TEXT
+            type: DataTypes.INTEGER
         }
     })
 

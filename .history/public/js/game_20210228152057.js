@@ -4,8 +4,6 @@ $(document).ready(() => {
   const exp = $(".exp")
   const level = $(".level")
   const name = $(".name")
-  const invContent = $('.itemList')
-  invContent.empty()
   // const hp = $(".hp")
   // const mp = $(".mp")
   // const htmlSkill = $(".html")
@@ -77,23 +75,29 @@ $(document).ready(() => {
         fillCharacter()
       }
       if (data.item) {
-        const itemList = `
-                <li id="itemNoHover"> ${data.item} </li>
-                `
-        invContent.append(itemList)
-
+        $.ajax({
+          url: "/api/charitem",
+          method: "PUT",
+          data: {
+            item: data.item
+          }
+        })
+        fillInventory()
       }
     })
   }
 
   function fillInventory() {
     $.get('api/character', (data) => {
-      console.log(data[0].item)
-      console.log(data[0])
-
-      // <div id="itemHover"> ${char[i].description} </div>
-      // should be able to keep items aquired in list
-      // delete the data already inside table for items
+      console.log(data.item)
+      console.log(data)
+      for (i = 0; i < char.item; i++) {
+        const itemList = `
+                <li id="itemNoHover"> ${data[i].item} </li>
+                `
+        $('.itemList').append(itemList)
+        // <div id="itemHover"> ${char[i].description} </div>
+      }
     })
   }
   fillInventory()

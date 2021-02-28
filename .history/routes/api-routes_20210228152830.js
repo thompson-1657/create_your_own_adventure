@@ -136,7 +136,7 @@ module.exports = function (app) {
 
   app.put("/api/charitem", (req, res) => {
     console.log(req.body.exp)
-    db.Character.create({
+    db.Character.build({
       item: (req.body.item)
     }, {
       where: {

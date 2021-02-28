@@ -1,7 +1,7 @@
 let sequelize = require("sequelize");
 let db = require("../models/");
 
-db.sequelize.sync().then(() => {
+db.sequelize.sync({}).then(() => {
     let adventurer = [{
         name: "MOON",
         hp: 100,

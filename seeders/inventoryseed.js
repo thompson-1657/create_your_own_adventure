@@ -5,19 +5,19 @@ db.sequelize.sync({}).then(() => {
     let items = [
         {
             name: "Brendan Eich's Keyboard",
-            description: "From the creator of JavaScript, the keyboard grants +10 JS"        
+            description: "From the creator of JavaScript, the keyboard grants more JavaScript proficiency."        
         },
         {
             name: "Ada Lovelace's Keyboard",
-            description: "From the mother of all that we know is coding, this keyboard gives +999 to every stat"        
+            description: "From the mother of all that we know is coding, this keyboard grants ALL coding skills proficiency."        
         },
         {
             name: "Tim Berners-Lee's Keyboard",
-            description: "From the father of HTML, this keyboard grants you all basic stats +10"        
+            description: "From the father of HTML, this keyboard grants you all basic proficiencies."        
         },
         {
             name: "Håkon Wium's Keyboard",
-            description: "From the creator of CSS Himself, This powerful keyboard grants +10 CSS"        
+            description: "From the creator of CSS Himself, This powerful keyboard grants CSS profciency."        
         },
         {
             name: "Josh's Melodica",

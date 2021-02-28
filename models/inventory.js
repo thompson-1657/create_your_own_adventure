@@ -9,5 +9,10 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         },
     })
+
+    Inventory.associate = function(models) {
+        Inventory.belongsTo(models.Character)
+    }
+    
     return Inventory;
 };

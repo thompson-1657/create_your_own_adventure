@@ -42,7 +42,6 @@ app.get("/game", isAuthenticated, (req, res) => {
 })
 app.get("/forms", isAuthenticated, (req, res) => {
   res.render('forms')
-  
 })
 
 };

@@ -16,26 +16,38 @@
                     <label>Name:</label>
                     <input id="name" type="text" placeholder="name">
                 </div>
-                            <div>
+                {{!-- <div>
                     Users has <span class="skillPLeft">0</span> skillpoints left
                 </div>
                 <div>
                     <label>HTML: </label><span id="htmlDisplay">0</span>
-                    <button class="nes-btn levelup" id="htmlUp"><p>&uarr;</p></button>
-                    <button class="nes-btn levelup" id="htmlDown"><p>&darr;</p></button>
+                    <button class="nes-btn levelup" id="htmlUp">
+                        <p>&uarr;</p>
+                    </button>
+                    <button class="nes-btn levelup" id="htmlDown">
+                        <p>&darr;</p>
+                    </button>
                 </div>
                 <div>
                     <label>CSS: </label><span id="cssDisplay">0</span>
-                    <button class="nes-btn levelup" id="cssUp"><p>&uarr;</p></button>
-                    <button class="nes-btn levelup" id="cssDown"><p>&darr;</p></button>
+                    <button class="nes-btn levelup" id="cssUp">
+                        <p>&uarr;</p>
+                    </button>
+                    <button class="nes-btn levelup" id="cssDown">
+                        <p>&darr;</p>
+                    </button>
                 </div>
                 <div>
                     <label>JavaScript: </label><span id="jsDisplay">0</span>
-                    <button class="nes-btn levelup" id="jsUp"><p>&uarr;</p></button>
-                    <button class="nes-btn levelup" id="jsDown"><p>&darr;</p></button>
-                </div>
+                    <button class="nes-btn levelup" id="jsUp">
+                        <p>&uarr;</p>
+                    </button>
+                    <button class="nes-btn levelup" id="jsDown">
+                        <p>&darr;</p>
+                    </button>
+                </div> --}}
                 <button class="nes-btn secSignUp" id="charCreator">
-                Start Game
+                    Enter
                 </button>
 
             </div>
@@ -50,13 +62,14 @@
         const charCreator = $("#charCreator")
 
         $('#charCreator').click(() => {
+            console.log(name.val())
+            $.ajax({
+                url: "/api/charname",
+                method: "PUT",
+                data: { name: name.val() }
+            })
 
-
-        //last thing
-        window.location.href = "/game";
-
+            window.location.href = "/game";
         })
-
-
     })
 </script>

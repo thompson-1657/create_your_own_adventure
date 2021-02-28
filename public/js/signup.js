@@ -26,9 +26,9 @@ $(document).ready(() => {
         }
         validPassword()
         return
-       } 
+      } 
       
-     
+    
     // If we have an email and password, run the signUpUser function
     signUpUser(userData.email, userData.password);
     emailInput.val("");
@@ -43,6 +43,7 @@ $(document).ready(() => {
       password: password
     })
       .then(() => {
+        $.post("/api/createcharacter")
         window.location.replace("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
       })

@@ -255,19 +255,6 @@ db.sequelize.sync().then(() => {
 
 
 
-<<<<<<< HEAD
-  ];
-  console.log(db.MainStory)
-  //db
-  db.MainStory.bulkCreate(stories)
-    .then(data => {
-      console.log(data);
-      process.exit(0);
-    })
-    .catch(err => {
-      console.error(err);
-      process.exit(1);
-=======
 ];
 
 db.MainStory.bulkCreate(stories)
@@ -278,7 +265,6 @@ db.MainStory.bulkCreate(stories)
     .catch(err => {
         console.error(err);
         // process.exit(1);
->>>>>>> 9cb4114eebc9a2c8da2f16ffb2dca7c4a6a73a1f
     });
 })
 }

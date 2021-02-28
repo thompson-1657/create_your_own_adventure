@@ -133,37 +133,7 @@ module.exports = function (app) {
       }
     }, )
   })
-
-  app.put("/api/charitem", (req, res) => {
-    console.log(req.body.exp)
-    db.Character.create({
-      item: (req.body.item)
-    }, {
-      where: {
-        id: req.user.id
-      }
-    }, )
-  })
-
-
-
-  app.post("/api/items", (req, res) => {
-    console.log(req.body)
-    db.Inventory.create({
-      name: req.body.name,
-      description: req.body.description,
-
-    })
-    res.json(res.body)
-  })
-
-  app.get("/api/items", (req, res) => {
-    db.Inventory.findAll({}).then(data => {
-      res.json(data)
-    })
-  })
-};
-
+}
 
 // app.put("/api/charlevel", (req, res) => {
 //   console.log(req.body.exp)

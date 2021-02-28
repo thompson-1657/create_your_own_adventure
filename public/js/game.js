@@ -10,12 +10,12 @@ $(document).ready(() => {
     // const cssSkill = $(".css")
     // const javaScriptskill = $(".javascript")
 
-    $("#start").click(function () {
-        $.get('/api/story/1', function (data) {
-            fillStory(1)
-            choice(1)
-        })
+  $('#start').click(function() {
+    $.get('/api/story/1', function(data) {
+      fillStory(1)
+      choice(1)
     })
+  })
 
     function choice(param) {
         $.get(`/api/story/${param}`, (data) => {
@@ -28,16 +28,16 @@ $(document).ready(() => {
                 ${data.leftChoice}</button>
                 <button id="rightButton" data-value="${data.rightChoiceId}">
                 ${data.rightChoice}</button>`
-                buttonInput.append(buttonGroup)
-                buttonleft = $("#leftButton")
-                buttonright = $("#rightButton")
-            } else if (data.leftChoiceId) {
-                const buttonGroup = `<button id="leftButton" data-value="${data.leftChoiceId}">
+        buttonInput.append(buttonGroup)
+        buttonleft = $('#leftButton')
+        buttonright = $('#rightButton')
+      } else if (data.leftChoiceId) {
+        const buttonGroup = `<button id="leftButton" data-value="${data.leftChoiceId}">
                 ${data.leftChoice}`
-                buttonInput.append(buttonGroup)
-                buttonleft = $("#leftButton")
-            } else if (data.rightChoiceId) {
-                const buttonGroup = `<button id="rightButton" data-value="${data.rightChoiceId}">
+        buttonInput.append(buttonGroup)
+        buttonleft = $('#leftButton')
+      } else if (data.rightChoiceId) {
+        const buttonGroup = `<button id="rightButton" data-value="${data.rightChoiceId}">
                 ${data.rightChoice}`
                 buttonInput.append(buttonGroup)
                 buttonright = $("#rightButton")
@@ -73,19 +73,19 @@ $(document).ready(() => {
         }
     })}
 
-    function fillInventory() {
-        $.get("api/items", (item) => {
-            console.log(item)
-            for (i = 0; i < item.length; i++) {
-                const itemList = `
+  function fillInventory() {
+    $.get('api/items', (item) => {
+      console.log(item)
+      for (i = 0; i < item.length; i++) {
+        const itemList = `
                 <li id="itemNoHover"> ${item[i].name} </li>
                 <div id="itemHover"> ${item[i].description} </div>
                 `
-                $(".itemList").append(itemList)
-            }
-        })
-    }
-    fillInventory()
+        $('.itemList').append(itemList)
+      }
+    })
+  }
+  fillInventory()
 
     function fillCharacter() {
         $.get("api/character", function(status) {

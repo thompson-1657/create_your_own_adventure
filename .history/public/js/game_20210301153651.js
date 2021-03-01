@@ -91,7 +91,7 @@ $(document).ready(() => {
     })
   }
 
-  //fills in character information for character level 
+  //fills in character information for character
   function fillCharacter() {
     $.get("api/character", function (status) {
       exp.empty()
@@ -112,6 +112,22 @@ $(document).ready(() => {
         level.append(2)
       }
       name.append(status[0].name)
+
+      const itemList = `
+      <li id="itemNoHover"> ${status.item} </li>
+      `
+
+      if (status[0].item === true) {
+        $('.itemList').append(itemList)
+      } else {
+        console.log("Have not aquired")
+      }
+      // level.append(status[0].level)
+      //  hp.append(status[0].hp)
+      //  mp.append(status[0].mp)
+      //  htmlSkill.append(status[0].HTML)
+      //  cssSkill.append(status[0].CSS)
+      //  javaScriptskill.append(status[0].JavaScript)
     })
   }
   fillCharacter()

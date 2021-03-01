@@ -91,7 +91,7 @@ $(document).ready(() => {
     })
   }
 
-  //fills in character information for character level 
+  //fills in character information for character
   function fillCharacter() {
     $.get("api/character", function (status) {
       exp.empty()

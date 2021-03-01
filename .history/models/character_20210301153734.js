@@ -1,4 +1,3 @@
-//character table
 module.exports = function (sequelize, DataTypes) {
     const Character = sequelize.define("Character", {
         name: {
@@ -34,16 +33,12 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             defaultValue: 1
         },
-        // item: {
-        //     type: DataTypes.TEXT
-        // }
+        item: {
+            type: DataTypes.TEXT
+        }
     })
 
-<<<<<<< HEAD
-    //associates the character table to the user table
-=======
     //assiciates the character table to the user table
->>>>>>> 751c1473d07d8c7b5835260fd968d136b243784a
     Character.associate = function (models) {
         Character.hasOne(models.User, {
             onDelete: "cascade"
@@ -52,3 +47,8 @@ module.exports = function (sequelize, DataTypes) {
 
     return Character;
 };
+
+//every 50 xp is one char level
+//could use a forigen key for multiple characters 
+//or could put character table to user table for single character
+//when you signup you create your character and 

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-//main story table
-=======
 //model for the main story which uses choice ids to route the story
->>>>>>> 751c1473d07d8c7b5835260fd968d136b243784a
 module.exports = function (sequelize, DataTypes) {
     const MainStory = sequelize.define("MainStory", {
         title: {

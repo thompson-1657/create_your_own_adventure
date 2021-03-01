@@ -13,7 +13,6 @@ $(document).ready(() => {
   // const cssSkill = $(".css")
   // const javaScriptskill = $(".javascript")
 
-
   //Function that starts the game when the start game is clicked
   $('#start').click(function () {
     $.get('/api/story/1', function (data) {
@@ -21,17 +20,8 @@ $(document).ready(() => {
       choice(1)
     })
   })
-  $.ajax({
-    url: "/api/clearexp",
-    method: "PUT",
-    data: {
-      exp: 0
-    }
-  })
 
-  fillCharacter()
-
-  //routes user choice based on the story
+  //function that sets up the mainstory choices and based on the decision the route of the game will change
   function choice(param) {
     $.get(`/api/story/${param}`, (data) => {
       buttonInput.empty()
@@ -75,12 +65,12 @@ $(document).ready(() => {
     })
   }
 
-  //displays the story buttons and based on the button it will give you an item or it will give you exp
+  //function that fills the story snippets in <p></p> 
   function fillStory(buttons) {
     $.get(`/api/story/${buttons}`, (data) => {
       storyBit = `<p> ${data.narrative} </p>`
       storyInput.append(storyBit)
-      //updating the character exp for to fill character
+      //updates character exp on table
       if (data.exp) {
         $.ajax({
           url: "/api/charexp",
@@ -101,7 +91,7 @@ $(document).ready(() => {
     })
   }
 
-  //based on character xp your character will level up
+  //fills in character information for character
   function fillCharacter() {
     $.get("api/character", function (status) {
       exp.empty()
@@ -120,10 +110,24 @@ $(document).ready(() => {
         level.append(3)
       } else if (status[0].exp >= 50) {
         level.append(2)
-      } else if (status[0].exp < 50) {
-        level.append(1)
       }
       name.append(status[0].name)
+
+      const itemList = `
+      <li id="itemNoHover"> ${status.item} </li>
+      `
+
+      if (status[0].item === true) {
+        $('.itemList').append(itemList)
+      } else {
+        console.log("Have not aquired")
+      }
+      // level.append(status[0].level)
+      //  hp.append(status[0].hp)
+      //  mp.append(status[0].mp)
+      //  htmlSkill.append(status[0].HTML)
+      //  cssSkill.append(status[0].CSS)
+      //  javaScriptskill.append(status[0].JavaScript)
     })
   }
   fillCharacter()

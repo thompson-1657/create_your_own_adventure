@@ -12,23 +12,25 @@ $(document).ready(() => {
       password: passwordInput.val().trim()
     };
 
-    if (!userData.email){
+    if (!userData.email) {
       $('#signUpEmail-error').empty()
+
       function validEmail() {
-      $('#signUpEmail-error').append('<p>Must enter a valid email.</p>')
+        $('#signUpEmail-error').append('<p>Must enter a valid email.</p>')
       }
       validEmail()
       return
-      }else if (!userData.password) {
-        $('#signUpPassword-error').empty()
-        function validPassword() {
+    } else if (!userData.password) {
+      $('#signUpPassword-error').empty()
+
+      function validPassword() {
         $('#signUpPassword-error').append('<p>Must enter a valid password.</p>')
-        }
-        validPassword()
-        return
-      } 
-      
-    
+      }
+      validPassword()
+      return
+    }
+
+
     // If we have an email and password, run the signUpUser function
     signUpUser(userData.email, userData.password);
     emailInput.val("");
@@ -39,9 +41,9 @@ $(document).ready(() => {
   // Otherwise we log any errors
   function signUpUser(email, password) {
     $.post("/api/signup", {
-      email: email,
-      password: password
-    })
+        email: email,
+        password: password
+      })
       .then(() => {
         $.post("/api/createcharacter")
         window.location.replace("/members");

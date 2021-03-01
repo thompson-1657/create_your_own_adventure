@@ -50,7 +50,7 @@ module.exports = function (app) {
     }
   });
   app.get("/api/story/:id", (req, res) => {
-    console.log(req.params.id)
+    // console.log(req.params.id)
     db.MainStory.findOne({
       where: {
         id: req.params.id
@@ -67,24 +67,6 @@ module.exports = function (app) {
     })
   })
 
-  //creates the table for mainstory
-  app.post("/api/story", (req, res) => {
-    const data = req.body
-    console.log(data)
-    db.MainStory.create({
-      title: req.body.title,
-      narrative: req.body.narrative,
-      leftChoice: req.body.leftChoice,
-      leftChoiceId: req.body.leftChoiceId,
-      rightChoice: req.body.rightChoice,
-      rightChoiceId: req.body.rightChoiceId,
-
-    })
-    res.json(data)
-  })
-
-  // api story post route
-  // api character post route
   app.post("/api/createCharacter", (req, res) => {
     db.Character.create({}).then((data) => {
         res.status(200).json(data)
@@ -127,7 +109,7 @@ module.exports = function (app) {
 
   //Increments the character exp on the table
   app.put("/api/charexp", (req, res) => {
-    console.log(req.body.exp)
+    // console.log(req.body.exp)
     db.Character.increment({
       exp: (req.body.exp)
     }, {

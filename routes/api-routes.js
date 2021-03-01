@@ -92,19 +92,11 @@ module.exports = function (app) {
   app.put("/api/charname", (req, res) => {
     db.Character.update({
       name: req.body.name
-
     }, {
       where: {
         id: req.user.id
       }
-    }, )
-    db.Character.update({
-      exp: 0
-    }, {
-      where: {
-        id: req.user.id
-      }
-    }, )
+    });
   })
 
   //Increments the character exp on the table
@@ -116,9 +108,21 @@ module.exports = function (app) {
       where: {
         id: req.user.id
       }
-    }, )
+    })
   })
 
+  app.put("/api/clearexp", (req, res) => {
+    // console.log(req.body.exp)
+    db.Character.increment({
+      exp: (req.body.exp)
+    }, {
+      where: {
+        id: req.user.id
+      }
+    })
+  })
+
+  
   //sends item data to character item on character table
   app.put("/api/charitem", (req, res) => {
     console.log(req.body.exp)

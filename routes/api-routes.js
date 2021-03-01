@@ -66,23 +66,7 @@ module.exports = function (app) {
     })
 
   })
-  app.post("/api/story", (req, res) => {
-    const data = req.body
-    // console.log(data)
-    db.MainStory.create({
-      title: req.body.title,
-      narrative: req.body.narrative,
-      leftChoice: req.body.leftChoice,
-      leftChoiceId: req.body.leftChoiceId,
-      rightChoice: req.body.rightChoice,
-      rightChoiceId: req.body.rightChoiceId,
 
-    })
-    res.json(data)
-  })
-
-  // api story post route
-  // api character post route
   app.post("/api/createCharacter", (req, res) => {
     db.Character.create({}).then((data) => {
         res.status(200).json(data)

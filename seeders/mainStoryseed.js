@@ -142,7 +142,7 @@ db.sequelize.sync().then(() => {
       narrative: "Great job! You won Ada Lovelace's Keyboard",
       leftChoice: "Cool!",
       leftChoiceId: 4,
-      // exp: ,
+      exp: 0,
       item: "Ada Lovelace's Keyboard"
     },
     { //17
@@ -223,7 +223,7 @@ db.sequelize.sync().then(() => {
       narrative: "You won Tim Berners-Lee's Keyboard! Very fitting as he was the inventor of HTML! ",
       leftChoice: "Add that to my collection!",
       leftChoiceId: 9,
-      // exp: ,
+      exp: 0,
       item: "Tim Berners-Lee's Keyboard"
     },
     { //26

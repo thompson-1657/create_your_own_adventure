@@ -115,6 +115,8 @@ $(document).ready(() => {
         level.append(3)
       } else if (status[0].exp >= 50) {
         level.append(2)
+      } else if (status[0].exp < 50) {
+        level.append(1)
       }
       name.append(status[0].name)
 

@@ -20,13 +20,18 @@ $(document).ready(() => {
       choice(1)
     })
   })
+
   $.ajax({
     url: "/api/clearexp",
     method: "PUT",
     data: {
       exp: 0
     }
-  })
+  }).then(
+    ()=> {
+      fillCharacter()
+    }
+  )
 
   fillCharacter()
 

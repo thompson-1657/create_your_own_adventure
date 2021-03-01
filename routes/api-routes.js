@@ -113,7 +113,7 @@ module.exports = function (app) {
 
   app.put("/api/clearexp", (req, res) => {
     // console.log(req.body.exp)
-    db.Character.increment({
+    db.Character.update({
       exp: (req.body.exp)
     }, {
       where: {

@@ -254,7 +254,6 @@ module.exports = function (app) {
       }
     ];
 
-    //fills the main story database with the story seed 
     db.MainStory.bulkCreate(stories)
       .then(data => {
         // console.log(data);

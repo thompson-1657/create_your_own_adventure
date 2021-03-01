@@ -103,7 +103,6 @@ module.exports = function (app) {
     })
   });
 
-  //character name linked to the user id
   app.put("/api/charname", (req, res) => {
     db.Character.update({
       name: req.body.name

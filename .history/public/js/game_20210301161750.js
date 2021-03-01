@@ -1,5 +1,4 @@
 $(document).ready(() => {
-  //global variables
   const buttonInput = $("#buttonInput")
   const storyInput = $("#storyInput")
   const exp = $(".exp")
@@ -21,7 +20,6 @@ $(document).ready(() => {
     })
   })
 
-  //routes user choice based on the story
   function choice(param) {
     $.get(`/api/story/${param}`, (data) => {
       buttonInput.empty()

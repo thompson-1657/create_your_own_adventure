@@ -1,5 +1,4 @@
 $(document).ready(() => {
-  //global variables
   const buttonInput = $("#buttonInput")
   const storyInput = $("#storyInput")
   const exp = $(".exp")

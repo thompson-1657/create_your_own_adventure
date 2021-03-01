@@ -1,5 +1,4 @@
 $(document).ready(() => {
-  //global variables
   const buttonInput = $("#buttonInput")
   const storyInput = $("#storyInput")
   const exp = $(".exp")
@@ -13,7 +12,6 @@ $(document).ready(() => {
   // const cssSkill = $(".css")
   // const javaScriptskill = $(".javascript")
 
-  //when the start button is clicked it will fill the first block of the story in
   $('#start').click(function () {
     $.get('/api/story/1', function (data) {
       fillStory(1)
@@ -21,7 +19,6 @@ $(document).ready(() => {
     })
   })
 
-  //routes user choice based on the story
   function choice(param) {
     $.get(`/api/story/${param}`, (data) => {
       buttonInput.empty()
@@ -65,7 +62,6 @@ $(document).ready(() => {
     })
   }
 
-  //displays the story buttons and based on the button it will give you an item or it will give you exp
   function fillStory(buttons) {
     $.get(`/api/story/${buttons}`, (data) => {
       storyBit = `<p> ${data.narrative} </p>`

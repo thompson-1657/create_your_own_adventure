@@ -20,16 +20,8 @@ $(document).ready(() => {
       choice(1)
     })
   })
-  $.ajax({
-    url: "/api/clearexp",
-    method: "PUT",
-    data: {
-      exp: 0
-    }
-  })
 
-  fillCharacter()
-
+  //function that sets up the mainstory choices and based on the decision the route of the game will change
   function choice(param) {
     $.get(`/api/story/${param}`, (data) => {
       buttonInput.empty()
@@ -99,7 +91,7 @@ $(document).ready(() => {
     })
   }
 
-  //fills in character information for character level 
+  //fills in character information for character
   function fillCharacter() {
     $.get("api/character", function (status) {
       exp.empty()
@@ -118,8 +110,6 @@ $(document).ready(() => {
         level.append(3)
       } else if (status[0].exp >= 50) {
         level.append(2)
-      } else if (status[0].exp < 50) {
-        level.append(1)
       }
       name.append(status[0].name)
     })

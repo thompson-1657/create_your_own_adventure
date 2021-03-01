@@ -2,6 +2,7 @@ const sequelize = require("sequelize");
 const db = require("../models/");
 
 module.exports = function (app) {
+
 db.sequelize.sync().then(() => {
   let stories = [{ //1
       title: "Homework Dilemma",
@@ -252,19 +253,16 @@ db.sequelize.sync().then(() => {
       // exp: ,
       // item:"" 
     }
-
-
-
 ];
 
-db.MainStory.bulkCreate(stories)
-    .then(data => {
+    db.MainStory.bulkCreate(stories)
+      .then(data => {
         // console.log(data);
         // process.exit(0);
-    })
-    .catch(err => {
+      })
+      .catch(err => {
         console.error(err);
         // process.exit(1);
-    });
-})
+      });
+  })
 }

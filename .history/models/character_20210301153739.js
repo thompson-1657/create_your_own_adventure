@@ -33,9 +33,9 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             defaultValue: 1
         },
-        // item: {
-        //     type: DataTypes.TEXT
-        // }
+        item: {
+            type: DataTypes.TEXT
+        }
     })
 
     //assiciates the character table to the user table

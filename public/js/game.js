@@ -35,6 +35,9 @@ $(document).ready(() => {
 
   fillCharacter()
 
+
+
+// adds buttons and fills in the required text in buttons
   function choice(param) {
     $.get(`/api/story/${param}`, (data) => {
       buttonInput.empty()
@@ -104,7 +107,7 @@ $(document).ready(() => {
     })
   }
 
-  //fills in character information for character level 
+  //fills in character information for character level, name and experience 
   function fillCharacter() {
     $.get("api/character", function (status) {
       exp.empty()

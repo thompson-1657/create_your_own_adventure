@@ -122,8 +122,7 @@ module.exports = function (app) {
     })
   })
 
-  
-  //sends item data to character item on character table
+  //updates the character items on the character table
   app.put("/api/charitem", (req, res) => {
     console.log(req.body.exp)
     db.Character.create({

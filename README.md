@@ -1,5 +1,7 @@
 # Choose your own coding adventure
 
+[![GitHub](https://img.shields.io/github/license/thompson-1657/professional_readme_generator?color=%230288d1)](LICENSE)
+
 ## Description
 
 ---
@@ -13,8 +15,9 @@ This application is a choose your own adventure game with a coding theme. It use
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
+- [Technologies](#Technologies)
 - [Contributors to the project](#Contributors-to-the-project)
+- [License](#license)
 - [Questions](#questions)
 
 ## Installation
@@ -43,8 +46,7 @@ node server.js
 
 ---
 
-**_----_** Enter gif/demo **_----_**
-
+[![recording](https://user-images.githubusercontent.com/71091515/109575730-02887300-7ab8-11eb-8f6d-c30fc86c7d7a.gif)](https://drive.google.com/file/d/1rb9qef3pBB_NICao0MRrh6q1E0KYkBj3/view)
 Click gif to link to the full usage video.
 
 To use the application start by signing up or logging in with an email and password. Once logged in click the "Begin your journey" button and create a name for your character. On the game page the user can find a Members button, a Dark-Mode button and a Logout button. The Members button will navigate the user back to the members page where they can create a new character name. The Dark-mode button will toggle between the deafault style of the game page and a dark-mode option. The Logout button logs the user out of the game. If pressed the user must sign back in in order to reach the game page again.
@@ -71,6 +73,7 @@ The application is responsive and user friendly on a vast variety of devices. On
 - Node.js
 - Passport
 - Express
+- Bootstrap
 
 ## Contributors to the project
 

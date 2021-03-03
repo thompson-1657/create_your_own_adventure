@@ -255,6 +255,7 @@ db.sequelize.sync().then(() => {
     }
 ];
 
+    //fills the main story database with the story seed 
     db.MainStory.bulkCreate(stories)
       .then(data => {
         // console.log(data);

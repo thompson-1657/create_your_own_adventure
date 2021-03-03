@@ -13,6 +13,7 @@ $(document).ready(() => {
   // const cssSkill = $(".css")
   // const javaScriptskill = $(".javascript")
 
+
   //Function that starts the game when the start game is clicked
   $('#start').click(function () {
     $.get('/api/story/1', function (data) {
@@ -81,12 +82,12 @@ $(document).ready(() => {
     })
   }
 
-  //function that fills the story snippets in <p></p> 
+  //displays the story buttons and based on the button it will give you an item or it will give you exp
   function fillStory(buttons) {
     $.get(`/api/story/${buttons}`, (data) => {
       storyBit = `<p> ${data.narrative} </p>`
       storyInput.append(storyBit)
-      //updates character exp on table
+      //updating the character exp for to fill character
       if (data.exp) {
         $.ajax({
           url: "/api/charexp",

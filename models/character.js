@@ -1,3 +1,4 @@
+//character table
 module.exports = function (sequelize, DataTypes) {
     const Character = sequelize.define("Character", {
         name: {
@@ -38,7 +39,8 @@ module.exports = function (sequelize, DataTypes) {
         // }
     })
 
-    //assiciates the character table to the user table
+
+    //associates the character table to the user table
     Character.associate = function (models) {
         Character.hasOne(models.User, {
             onDelete: "cascade"

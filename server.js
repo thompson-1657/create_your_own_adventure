@@ -30,7 +30,7 @@ require("./routes/api-routes.js")(app);
 
 require("./seeders/mainStoryseed.js")(app);
 
-// Syncing our database and logging a message to the user upon success
+// Syncing our database and logging a message to the user upon success.
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log(

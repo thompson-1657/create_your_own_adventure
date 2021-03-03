@@ -100,7 +100,7 @@ $(document).ready(() => {
       //updates character items on table
       if (data.item) {
         const itemList = `
-                <li id="itemNoHover"> ${data.item} </li>
+                <li class="itemNoHover"> ${data.item} </li>
                 `
         invContent.append(itemList)
       }

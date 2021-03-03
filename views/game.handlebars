@@ -27,20 +27,21 @@
     <p class="name"></p>
     <h3>Stats:</h3>
     <ul>
-    {{!-- <li>HP:<span class="hp"></span></li> --}}
-    <li>EXP:<span class="exp"></span></li>
-    {{!-- <li>MP: <span class="mp"></span></li> --}}
-    <li>Level:<span class="level"></span></li>
-    {{!-- <li>HTML:<span class="html"></span></li>
-    <li>CSS:<span class="css"></span></li>
-    <li>JavaScript:<span class="javascript"></span></li> --}}
+      {{!-- <li>HP:<span class="hp"></span></li> --}}
+      <li>EXP:<span class="exp"></span></li>
+      {{!-- <li>MP: <span class="mp"></span></li> --}}
+      <li>Level:<span class="level"></span></li>
+      {{!-- <li>HTML:<span class="html"></span></li>
+      <li>CSS:<span class="css"></span></li>
+      <li>JavaScript:<span class="javascript"></span></li> --}}
     </ul>
-    <div class="col-3 invContent">
-      <h2 class="inventoryHeader">Inventory</h2>
-      <ul id="itemList"></ul>
-    </div>
+      <h2>Inventory</h2>
+      <ul class="itemList">
+
+      </ul>
   </div>
 </div>
+
 
 
 <div class="row row-height">
@@ -121,7 +122,7 @@
 
   $(document.body).toggleClass(localStorage.toggled);
 
-//function for darkmode
+  //function for darkmode
   function darkLight() {
     if (localStorage.toggled != 'darkmode') {
       $(document.body).toggleClass('darkmode', true);
